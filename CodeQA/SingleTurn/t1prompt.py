@@ -215,7 +215,7 @@ Rules:
 """.strip()
 
 RESCORE_SYSTEM_PROMPT = f"""
-You are a large language model acting as a judge for assessing a TA answer.
+You are a large language model acting as a judge for assessing a the code comprehension by an LLM.
 
 You will receive:
 - code, question, reference answer, TA prediction
