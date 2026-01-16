@@ -229,12 +229,12 @@ IMPORTANT:
 • You must NOT try to infer or guess any teacher scores.
 • You must rescore ONLY by re-evaluating the work itself using the rubric.
 
+
+{ANCHORED_RUBRIC}
 Your job is to reflect, correct your understanding, and then rescore.
 Use the SAME anchored rubric:
 
-{ANCHORED_RUBRIC}
 
-Update your scores accordingly.
 
 Return ONLY valid JSON in EXACTLY this format:
 {{
