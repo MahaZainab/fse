@@ -17,7 +17,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import os
 
 # Configuration
-MODEL_NAME = "Qwen/Qwen2.5-Coder-7B-Instruct"  # or "meta-llama/Llama-2-7b-chat-hf"
+MODEL_NAME = "Qwen/Qwen3-Coder-30B-A3B-Instruct"  # or "meta-llama/Llama-2-7b-chat-hf"
 INPUT_FILE = "mistral_prediction.json"
 OUTPUT_JSON = "mistral_teacher.json"
 OUTPUT_CSV = "mistral_teacher.csv"
