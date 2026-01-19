@@ -24,13 +24,13 @@ from tqdm import tqdm
 # Configuration
 # =============================
 INPUT_JSON = "Codellama_predictions.json"  # expects: code, question, answer, prediction
-OUTPUT_JSON = "CodeLlama_thirty.json"
-OUTPUT_CSV = "CodeLlama_thirty.csv"
+OUTPUT_JSON = "CS1QA_codeLlama_all.json"
+OUTPUT_CSV = "CS1QA_codeLlama_all.csv"
 
 STUDENT_JUDGE_MODEL = "Qwen/Qwen2.5-Coder-7B-Instruct"
 TEACHER_MODEL = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
 
-TEACHER_INTERVENTION_RATE = 0.30
+TEACHER_INTERVENTION_RATE = 1.0
 RANDOM_SEED = 42
 
 
