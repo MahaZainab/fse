@@ -24,8 +24,8 @@ from tqdm import tqdm
 # Configuration
 # =============================
 INPUT_JSON = "Codellama_predictions.json"  # expects: code, question, answer, prediction
-OUTPUT_JSON = "CS1QA_codeLlama_all.json"
-OUTPUT_CSV = "CS1QA_codeLlama_all.csv"
+OUTPUT_JSON = "CS1QA_codeLlama_sixty.json"
+OUTPUT_CSV = "CS1QA_codeLlama_sixty.csv"
 
 STUDENT_JUDGE_MODEL = "Qwen/Qwen2.5-Coder-7B-Instruct"
 TEACHER_MODEL = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
