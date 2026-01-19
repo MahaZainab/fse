@@ -19,9 +19,9 @@ import os
 # Configuration
 MODEL_NAME = "Qwen/Qwen2.5-Coder-7B-Instruct"  # or "meta-llama/Llama-2-7b-chat-hf"
 INPUT_FILE = "mistral_prediction.json"
-OUTPUT_JSON = "CodeQA_Part1.json"
-OUTPUT_CSV = "CodeQA_Part1.csv"
-OUTPUT_PLOT = "evaluation_scores.png"
+OUTPUT_JSON = "mistral_teacher.json"
+OUTPUT_CSV = "mistral_teacher.csv"
+OUTPUT_PLOT = "mistral_teacher.png"
 SAVE_EVERY = 25
 MAX_WORKERS = 4
 MAX_NEW_TOKENS = 512
