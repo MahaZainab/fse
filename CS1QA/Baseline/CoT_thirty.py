@@ -94,7 +94,8 @@ Clarity: easy to follow, unambiguous, well-structured.
 # Student prompt (judge): scores only (strict JSON)
 # -----------------------------
 JUDGE_SYSTEM_PROMPT = f"""
-You are a large language model acting as a judge for assessing the code comprehension capabilities of an LLM.
+You are a large language model acting as a judge for  assessing the performance of a Teaching Assistant (TA)
+in an introductory Python programming course.
 
 You will receive:
 - A Python code snippet
