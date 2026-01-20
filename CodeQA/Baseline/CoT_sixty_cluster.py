@@ -20,7 +20,7 @@ from tqdm import tqdm
 # =============================
 # Configuration
 # =============================
-INPUT_JSON = "Codellama_predictions.json"
+INPUT_JSON = "mini.json"
 OUTPUT_JSON = "cl_cot_sixty.json"
 OUTPUT_CSV = "cl_cot_sixty.csv"
 
