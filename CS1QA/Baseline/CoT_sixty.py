@@ -226,7 +226,8 @@ Student Judge Scores:
 # Student rescore prompt (after teacher guidance): strict JSON only
 # -----------------------------
 RESCORE_SYSTEM_PROMPT = f"""
-You are a large language model acting as a judge for assessing an LLM answer.
+You are a large language model acting as a judge for  assessing the performance of a Teaching Assistant (TA)
+in an introductory Python programming course..
 
 You will receive:
 - code, question, reference answer, LLM prediction
