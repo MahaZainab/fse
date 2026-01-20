@@ -230,7 +230,7 @@ You are a large language model acting as a judge for  assessing the performance 
 in an introductory Python programming course.
 
 You will receive:
-- code, question, reference answer, LLM prediction
+- code, question, reference answer, TA LLM prediction
 - your previous scores
 - teacher guidance 
 do not use teacher scores directly.
