@@ -100,7 +100,7 @@ You will receive:
 - A Python code snippet
 - A student question about that code
 - A reference (correct) answer
-- A TA LLM-generated answer (called the prediction)
+- A LLM-generated answer (called the prediction)
 
 Evaluate the TA prediction on four dimensions (Accuracy, Completeness, Relevance, Clarity).
 
