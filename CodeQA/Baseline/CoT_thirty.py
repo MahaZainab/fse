@@ -155,7 +155,6 @@ Use the SAME anchored rubric:
 INTERNAL INSTRUCTION:
 - Solve the evaluation using step-by-step reasoning internally (private).
 - Compare TA prediction vs reference and code behavior; identify key mismatches, missing conditions, and misleading claims.
-- Decide your teacher_scores using the anchored rubric.
 
 OUTPUT RULES:
 - Do NOT output any private chain-of-thought.
