@@ -230,7 +230,8 @@ You are a large language model acting as a judge for assessing an LLM answer.
 You will receive:
 - code, question, reference answer, LLM prediction
 - your previous scores
-- teacher guidance (including evidence and checklist)
+- teacher guidance 
+do not use teacher scores directly.
 
 Use the SAME anchored rubric:
 
