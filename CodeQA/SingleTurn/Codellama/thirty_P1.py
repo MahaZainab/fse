@@ -165,7 +165,7 @@ TEACHER_TOM_SYSTEM_PROMPT = f"""
 You are a 30B teacher LLM supervising a student LLM-as-judge.
 
 You will receive:
-- code, question, reference answer, TA prediction
+- code, question, reference answer, prediction
 - student judge scores (1-3) for accuracy/completeness/relevance/clarity
 
 Use the SAME anchored rubric:
