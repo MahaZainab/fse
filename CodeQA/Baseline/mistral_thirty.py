@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Chain-of-Thought Supervision Experiment
-Adapted for remote cluster execution with GPU support and checkpointing
+Single-turn Theory-of-Mind Supervision (ToMS) Evaluation
+Adapted for remote cluster execution with GPU support
 
-Experiment: Single teacher intervention -> student updates scores once
-Teacher is instructed to "use chain-of-thought" INTERNALLY (private),
-but outputs only concise justifications + guidance (no hidden reasoning text).
+Experiment: Single teacher intervention (Theory-of-Mind guidance) -> student updates scores once
+- Teacher intervention is ONE message (no teacher-student dialogue, no multi-turn mentoring loop)
+- Teacher applies Theory of Mind to diagnose the student's evaluation and give targeted guidance
+- Student re-scores once using the teacher's ToM guidance
 """
 
 import json
@@ -22,22 +23,22 @@ from tqdm import tqdm
 # =============================
 # Configuration
 # =============================
-INPUT_JSON = "Codellama_predictions.json"  # expects list of dicts with keys: code, question, answer, prediction
-OUTPUT_JSON = "cl_cot_all.json"
-OUTPUT_CSV = "cl_cot_all.csv"
+INPUT_JSON = "mistral_prediction.json"  # expects: code, question, answer, prediction
+OUTPUT_JSON = "mistral_thirty.json"
+OUTPUT_CSV = "mistral_thirty.csv"
 
 STUDENT_JUDGE_MODEL = "Qwen/Qwen2.5-Coder-7B-Instruct"
 TEACHER_MODEL = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
 
-TEACHER_INTERVENTION_RATE = 1.0
+TEACHER_INTERVENTION_RATE = 0.30
 RANDOM_SEED = 42
 
-# Save partial outputs every N processed examples
-CHECKPOINT_EVERY = 25
 
+# Save partial outputs every N processed examples
+# (Save every 25 examples to match your cluster run preference)
+CHECKPOINT_EVERY = 25
 # HuggingFace cache directory
 HF_CACHE_DIR = os.getenv("HF_HOME", "/aiau010_scratch/maz0032/.cache/huggingface")
-
 
 # =============================
 # Model wrapper (HF)
@@ -113,7 +114,7 @@ class HFChat:
 
 
 # =============================
-# Anchored rubric (consistent meaning for 1/2/3)
+# Prompts and Rubric
 # =============================
 ANCHORED_RUBRIC = r"""
 Scoring uses an ANCHORED 3-point rubric:
@@ -140,24 +141,103 @@ Relevance: directly answers the question, stays on-topic.
 Clarity: easy to follow, unambiguous, well-structured.
 """.strip()
 
-
-# =============================
-# Student prompt (judge): scores only (strict JSON)
-# =============================
 JUDGE_SYSTEM_PROMPT = f"""
-You are a large language model acting as a judge for assessing the code comprehension capabilities of an LLM.
+You are a large language model acting as a judge for assessing the quality of code comprehension by an LLM
 
 You will receive:
 - A Python code snippet
 - A student question about that code
 - A reference (correct) answer
-- A LLM-generated answer (called the prediction)
+- An LLM-generated answer (called the prediction)
 
-Evaluate the LLM prediction on four dimensions (Accuracy, Completeness, Relevance, Clarity).
+Your task is to evaluate the prediction against the reference answer using four metrics:
+accuracy, completeness, relevance, and clarity. For each, provide:
+{ANCHORED_RUBRIC}
+
+Return ONLY valid JSON in EXACTLY this format:
+{{
+  "accuracy": {{ "score": 1-3 }},
+  "completeness": {{ "score": 1-3 }},
+  "relevance": {{ "score": 1-3 }},
+  "clarity": {{ "score": 1-3 }}
+}}
+
+Do NOT include explanations.
+""".strip()
+
+TEACHER_TOM_SYSTEM_PROMPT = f"""
+You are a 30B teacher LLM supervising a student LLM-as-judge.
+
+You will receive:
+- code, question, reference answer, prediction
+- student judge scores (1-3) for accuracy/completeness/relevance/clarity
+
+Use the SAME anchored rubric:
 
 {ANCHORED_RUBRIC}
 
-Respond ONLY with valid JSON in EXACTLY this format:
+Your job is a SINGLE intervention (one response) that uses THEORY OF MIND:
+1) Independently form your own scores based on code/question/reference/prediction.
+2) Compare your scores to the student's scores.
+3) Infer the student's likely mental model from the mismatch patterns (e.g., what it over-weighted, overlooked, assumed).
+4) Provide targeted guidance that updates the student's evaluation strategy.
+
+- Keep guidance concrete and evidence-based (point to specific missing/wrong aspects in the prediction vs reference/code).
+
+Return ONLY valid JSON in EXACTLY this format:
+
+{{
+  "teacher_scores": {{
+    "accuracy": 1-3,
+    "completeness": 1-3,
+    "relevance": 1-3,
+    "clarity": 1-3
+  }},
+  "score_comparison": {{
+    "accuracy": {{"student": 1-3, "teacher": 1-3, "match": true/false}},
+    "completeness": {{"student": 1-3, "teacher": 1-3, "match": true/false}},
+    "relevance": {{"student": 1-3, "teacher": 1-3, "match": true/false}},
+    "clarity": {{"student": 1-3, "teacher": 1-3, "match": true/false}}
+  }},
+  "inferred_student_mental_model": {{
+    "beliefs_or_criteria": "what the student judge seems to optimize for",
+    "likely_blind_spots": ["...","..."],
+    "likely_assumptions": ["...","..."]
+  }},
+  "tom_guidance": {{
+    "accuracy": "2-4 sentences if mismatch else empty string",
+    "completeness": "2-4 sentences if mismatch else empty string",
+    "relevance": "2-4 sentences if mismatch else empty string",
+    "clarity": "2-4 sentences if mismatch else empty string"
+  }},
+  "checklist_next_time": ["short actionable item", "short actionable item"]
+}}
+
+Rules:
+- In tom_guidance, leave empty string for dimensions where match=true.
+- Keep the mental model concise and plausible based on the student's scores.
+""".strip()
+
+RESCORE_SYSTEM_PROMPT = f"""
+You are a large language model acting as a judge for assessing a the code comprehension by an LLM.
+
+You will receive:
+- code, question, reference answer, prediction
+- your previous scores
+- You will now see Theory-of-Mind guidance from a teacher describing:
+- how you may have been thinking,
+- what conceptual gaps or misconceptions you likely had,
+- and how to improve.
+IMPORTANT:
+• Do not use teacher scores.
+• You must NOT try to infer or guess any teacher scores.
+• You must rescore ONLY by re-evaluating the work itself using the rubric.
+
+Your job is to reflect, correct your understanding, and then rescore.
+Use the SAME anchored rubric:
+{ANCHORED_RUBRIC}
+
+Return ONLY valid JSON in EXACTLY this format:
 {{
   "accuracy": {{ "score": 1-3 }},
   "completeness": {{ "score": 1-3 }},
@@ -169,7 +249,11 @@ Do NOT include explanations.
 """.strip()
 
 
+# =============================
+# Prompt builders
+# =============================
 def build_judge_user_prompt(code: str, question: str, reference: str, prediction: str) -> str:
+    """Build initial judge prompt."""
     return f"""
 Code:
 ```python
@@ -187,64 +271,6 @@ Prediction:
 """.strip()
 
 
-# =============================
-# Teacher prompt: intervene once, then student will rescore once.
-# Teacher is asked to "solve" the evaluation using step-by-step reasoning INTERNALLY.
-# NOTE: teacher must NOT reveal private chain-of-thought; instead gives concise evidence-based justification.
-# =============================
-TEACHER_SYSTEM_PROMPT = f"""
-You are a 30B teacher LLM reviewing a student LLM-as-judge's evaluation of an LLM's answer.
-
-You will receive:
-- code, question, reference answer, LLM prediction
-- student judge scores (1-3) for accuracy/completeness/relevance/clarity
-
-Use the SAME anchored rubric:
-
-{ANCHORED_RUBRIC}
-
-INTERNAL INSTRUCTION:
-- Solve the evaluation using step-by-step reasoning internally (private).
-- Compare the prediction vs reference and code behavior; identify key mismatches, missing conditions, and misleading claims.
-- Decide your teacher_scores using the anchored rubric.
-
-OUTPUT RULES:
-- Do NOT output any private chain-of-thought.
-- Output only concise, high-signal justifications: short "evidence" bullets per dimension (1-3 bullets each).
-- Do not share your own score directly with the student judge.
-
-Return ONLY valid JSON in EXACTLY this format:
-
-{{
-  "teacher_scores": {{
-    "accuracy": 1-3,
-    "completeness": 1-3,
-    "relevance": 1-3,
-    "clarity": 1-3
-  }},
-  "comparison": {{
-    "accuracy": {{"student": 1-3, "teacher": 1-3, "match": true/false}},
-    "completeness": {{"student": 1-3, "teacher": 1-3, "match": true/false}},
-    "relevance": {{"student": 1-3, "teacher": 1-3, "match": true/false}},
-    "clarity": {{"student": 1-3, "teacher": 1-3, "match": true/false}}
-  }},
-  "evidence": {{
-    "accuracy": ["bullet", "bullet"],
-    "completeness": ["bullet", "bullet"],
-    "relevance": ["bullet", "bullet"],
-    "clarity": ["bullet", "bullet"]
-  }},
-  "guidance": {{
-    "accuracy": "2-4 sentences if mismatch else empty string",
-    "completeness": "2-4 sentences if mismatch else empty string",
-    "relevance": "2-4 sentences if mismatch else empty string",
-    "clarity": "2-4 sentences if mismatch else empty string"
-  }},
-  "checklist_next_time": ["short actionable item", "short actionable item"]
-}}
-""".strip()
-
-
 def build_teacher_user_prompt(
     code: str,
     question: str,
@@ -252,6 +278,7 @@ def build_teacher_user_prompt(
     prediction: str,
     student_scores: Dict[str, int],
 ) -> str:
+    """Build teacher intervention prompt."""
     return f"""
 Code:
 ```python
@@ -264,41 +291,11 @@ Question:
 Reference Answer:
 {reference}
 
-LLM Prediction:
+Prediction:
 {prediction}
 
 Student Judge Scores:
 {json.dumps(student_scores, indent=2)}
-""".strip()
-
-
-# =============================
-# Student rescore prompt (after teacher guidance): strict JSON only
-# =============================
-RESCORE_SYSTEM_PROMPT = f"""
-You are a large language model acting as a judge for assessing an LLM answer.
-
-You will receive:
-- code, question, reference answer, LLM prediction
-- your previous scores
-- teacher guidance 
-do not use teacher scores directly.
-
-Use the SAME anchored rubric:
-
-{ANCHORED_RUBRIC}
-
-Update your scores accordingly.
-
-Return ONLY valid JSON in EXACTLY this format:
-{{
-  "accuracy": {{ "score": 1-3 }},
-  "completeness": {{ "score": 1-3 }},
-  "relevance": {{ "score": 1-3 }},
-  "clarity": {{ "score": 1-3 }}
-}}
-
-Do NOT include explanations.
 """.strip()
 
 
@@ -310,6 +307,7 @@ def build_rescore_user_prompt(
     prev_scores: Dict[str, int],
     teacher_json: Dict[str, Any],
 ) -> str:
+    """Build student rescore prompt after teacher guidance."""
     return f"""
 Code:
 ```python
@@ -392,10 +390,18 @@ def parse_teacher_json(raw_text: str) -> Optional[Dict[str, Any]]:
     if not obj:
         return None
     
-    if "teacher_scores" not in obj or "comparison" not in obj or "guidance" not in obj:
+    required = {
+        "teacher_scores", 
+        "score_comparison", 
+        "inferred_student_mental_model", 
+        "tom_guidance", 
+        "checklist_next_time"
+    }
+    
+    if not required.issubset(set(obj.keys())):
         return None
     
-    # Validate teacher_scores
+    # Validate teacher scores
     ts = obj.get("teacher_scores", {})
     if not isinstance(ts, dict):
         return None
@@ -423,12 +429,11 @@ def save_checkpoint(records: List[Dict[str, Any]], n_processed: int) -> None:
     """Save JSON + CSV checkpoints for the currently processed records."""
     # JSON checkpoint
     _atomic_write_text(OUTPUT_JSON, json.dumps(records, indent=2, ensure_ascii=False))
-    
     # CSV checkpoint (summary columns only; matches final CSV schema)
     df = pd.DataFrame(records)
     if not df.empty:
         df_out = df[[
-            "code", "question", "answer", "prediction",
+            "id", "code", "question", "answer", "prediction",
             "accuracy", "completeness", "relevance", "clarity",
             "accuracy_initial", "completeness_initial", "relevance_initial", "clarity_initial",
             "accuracy_rescored", "completeness_rescored", "relevance_rescored", "clarity_rescored",
@@ -437,9 +442,7 @@ def save_checkpoint(records: List[Dict[str, Any]], n_processed: int) -> None:
         tmp_csv = OUTPUT_CSV + ".tmp"
         df_out.to_csv(tmp_csv, index=False, encoding="utf-8")
         os.replace(tmp_csv, OUTPUT_CSV)
-    
     print(f"[Checkpoint] Saved {n_processed} examples -> {OUTPUT_JSON}, {OUTPUT_CSV}")
-
 
 # =============================
 # Main execution
@@ -447,7 +450,7 @@ def save_checkpoint(records: List[Dict[str, Any]], n_processed: int) -> None:
 def main() -> None:
     """Main execution function."""
     print("=" * 60)
-    print("Chain-of-Thought Supervision Experiment")
+    print("Single-Turn Theory-of-Mind Supervision (ToMS)")
     print("=" * 60)
     
     # Set random seed
@@ -514,7 +517,7 @@ def main() -> None:
             # Step 2: Teacher intervention (if selected)
             if teacher_intervened and student_scores is not None:
                 raw_teacher = teacher.invoke([
-                    {"role": "system", "content": TEACHER_SYSTEM_PROMPT},
+                    {"role": "system", "content": TEACHER_TOM_SYSTEM_PROMPT},
                     {"role": "user", "content": build_teacher_user_prompt(
                         code, question, reference, prediction, student_scores
                     )},
@@ -547,7 +550,7 @@ def main() -> None:
 
                 "teacher_intervened": teacher_intervened,
                 "raw_teacher_output": raw_teacher,
-                "teacher_guidance_json": teacher_out,
+                "teacher_tom_json": teacher_out,
 
                 "raw_student_rescore_output": raw_rescore,
                 "rescored_student_scores": rescored_scores,
@@ -588,13 +591,17 @@ def main() -> None:
             save_checkpoint(records, len(records))
         raise
 
-    # Save final results
+
+    # Save results
     print("\n" + "=" * 60)
-    print("Saving final results...")
+    print("Saving results...")
     print("=" * 60)
     
+    # Save JSON + CSV (final)
     save_checkpoint(records, len(records))
-    
+    print(f"Final outputs saved:")
+    print(f"  - {OUTPUT_JSON}")
+    print(f"  - {OUTPUT_CSV}")
     # Print summary
     print("\n" + "=" * 60)
     print("Summary")
