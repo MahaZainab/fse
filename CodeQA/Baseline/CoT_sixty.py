@@ -14,8 +14,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 # =============================
 
 INPUT_JSON = "Codellama_predictions.json"                         # expects list of dicts with keys: code, question, answer, prediction
-OUTPUT_JSON = "cl_cot_all.json"
-OUTPUT_CSV = "cl_cot_all.csv"
+OUTPUT_JSON = "cl_cot_sixty.json"
+OUTPUT_CSV = "cl_cot_sixty.csv"
 
 STUDENT_JUDGE_MODEL = "Qwen/Qwen2.5-Coder-7B-Instruct"
 TEACHER_MODEL = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
