@@ -13,14 +13,14 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 # but outputs only concise justifications + guidance (no hidden reasoning text).
 # =============================
 
-INPUT_JSON = "mini.json"                         # expects list of dicts with keys: code, question, answer, prediction
-OUTPUT_JSON = "rq3_single_cot_then_rescore_mini.json"
-OUTPUT_CSV = "rq3_single_cot_then_rescore_mini.csv"
+INPUT_JSON = "Codellama_predictions.json"                         # expects list of dicts with keys: code, question, answer, prediction
+OUTPUT_JSON = "cl_cot_all.json"
+OUTPUT_CSV = "cl_cot_all.csv"
 
 STUDENT_JUDGE_MODEL = "Qwen/Qwen2.5-Coder-7B-Instruct"
 TEACHER_MODEL = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
 
-TEACHER_INTERVENTION_RATE = 0.30
+TEACHER_INTERVENTION_RATE = 1.0
 RANDOM_SEED = 42
 
 
