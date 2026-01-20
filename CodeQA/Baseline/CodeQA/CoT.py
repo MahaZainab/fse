@@ -102,7 +102,7 @@ You will receive:
 - A reference (correct) answer
 - A LLM-generated answer (called the prediction)
 
-Evaluate the TA prediction on four dimensions (Accuracy, Completeness, Relevance, Clarity).
+Evaluate the LLM prediction on four dimensions (Accuracy, Completeness, Relevance, Clarity).
 
 {ANCHORED_RUBRIC}
 
@@ -142,10 +142,10 @@ Prediction:
 # NOTE: teacher must NOT reveal private chain-of-thought; instead gives concise evidence-based justification.
 # -----------------------------
 TEACHER_SYSTEM_PROMPT = f"""
-You are a 30B teacher LLM reviewing a student LLM-as-judge's evaluation of a Teaching Assistant's (TA) answer.
+You are a 30B teacher LLM reviewing a student LLM-as-judge's evaluation of an LLM's answer.
 
 You will receive:
-- code, question, reference answer, TA prediction
+- code, question, reference answer, LLM prediction
 - student judge scores (1-3) for accuracy/completeness/relevance/clarity
 
 Use the SAME anchored rubric:
@@ -213,7 +213,7 @@ Question:
 Reference Answer:
 {reference}
 
-TA Prediction:
+LLM Prediction:
 {prediction}
 
 Student Judge Scores:
@@ -225,10 +225,10 @@ Student Judge Scores:
 # Student rescore prompt (after teacher guidance): strict JSON only
 # -----------------------------
 RESCORE_SYSTEM_PROMPT = f"""
-You are a large language model acting as a judge for assessing a TA answer.
+You are a large language model acting as a judge for assessing an LLM answer.
 
 You will receive:
-- code, question, reference answer, TA prediction
+- code, question, reference answer, LLM prediction
 - your previous scores
 - teacher guidance (including evidence and checklist)
 
