@@ -101,9 +101,9 @@ You will receive:
 - A Python code snippet
 - A student question about that code
 - A reference (correct) answer
-- A LLM-generated answer (called the prediction)
+- A TA LLM-generated answer (called the prediction)
 
-Evaluate the LLM prediction on four dimensions (Accuracy, Completeness, Relevance, Clarity).
+Evaluate the TA prediction on four dimensions (Accuracy, Completeness, Relevance, Clarity).
 
 {ANCHORED_RUBRIC}
 
@@ -226,7 +226,8 @@ Student Judge Scores:
 # Student rescore prompt (after teacher guidance): strict JSON only
 # -----------------------------
 RESCORE_SYSTEM_PROMPT = f"""
-You are a large language model acting as a judge for assessing an LLM answer.
+You are a large language model acting as a judge for  assessing the performance of a Teaching Assistant (TA)
+in an introductory Python programming course.
 
 You will receive:
 - code, question, reference answer, LLM prediction
