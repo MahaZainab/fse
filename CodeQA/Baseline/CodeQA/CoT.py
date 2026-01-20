@@ -160,7 +160,7 @@ INTERNAL INSTRUCTION:
 OUTPUT RULES:
 - Do NOT output any private chain-of-thought.
 - Output only concise, high-signal justifications: short "evidence" bullets per dimension (1–3 bullets each).
-- Provide guidance that the student can use to rescore correctly.
+- Do not share your own score directly with the student judge.
 
 Return ONLY valid JSON in EXACTLY this format:
 
