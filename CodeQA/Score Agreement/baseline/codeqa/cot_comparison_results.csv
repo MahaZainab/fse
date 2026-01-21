@@ -1,0 +1,13 @@
+file,measure,compared,matched,agreement_accuracy
+cl_cot_thirty.csv,accuracy,2341,1418,0.6057240495514737
+cl_cot_thirty.csv,completeness,2341,1362,0.5818026484408373
+cl_cot_thirty.csv,relevance,2341,1151,0.4916702263989748
+cl_cot_thirty.csv,clarity,2341,1063,0.45407945322511745
+cl_cot_each.csv,accuracy,731,375,0.5130013661202186
+cl_cot_each.csv,completeness,731,368,0.5034199726402189
+cl_cot_each.csv,relevance,731,341,0.4664849529780564
+cl_cot_each.csv,clarity,731,318,0.43568464730290457
+cl_cot_sixty.csv,accuracy,1185,608,0.5130801687763713
+cl_cot_sixty.csv,completeness,1185,602,0.5080168776371308
+cl_cot_sixty.csv,relevance,1185,564,0.4759493670886076
+cl_cot_sixty.csv,clarity,1185,539,0.4548523206751055
