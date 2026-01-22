@@ -18,7 +18,7 @@ import os
 
 # Configuration
 MODEL_NAME = "Qwen/Qwen2.5-Coder-7B-Instruct"  # or "meta-llama/Llama-2-7b-chat-hf"
-INPUT_FILE = "mistralpredictions1.json.json"
+INPUT_FILE = "mistralpredictions1.json"
 OUTPUT_JSON = "CodeQA_mistral_Part1.json"
 OUTPUT_CSV = "CodeQA_mistral_Part1.csv"
 OUTPUT_PLOT = "CodeQA_mistral_Part1.png"
