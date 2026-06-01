@@ -1,0 +1,2522 @@
+[
+  {
+    "code": "def autodiscover global LOADIN Gif LOADING return LOADING Trueimport impfrom django conf import settingsfor app in settings INSTALLED APPS try import app app path sys modules[app] path except Attribute Error continuetry imp find module 'permissions' app path except Import Error continue import '%s permissions' % app app path sys modules[ '%s permissions' % app ]LOADING False",
+    "question": "For what purpose does the code go ?",
+    "answer": "to make sure the permission set classes are registered correctly",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def get module files fullname global modulespath fullname replace ' ' '/' return [module for module in modules iterkeys if module rsplit ' ' 1 [0 ] path or any [ path + '/ init ' + ext module for ext in [' py' ' pyc' ' pyo']] ]",
+    "question": "For what purpose do the file return ?",
+    "answer": "to load",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def get port stats port cnts defaultdict int for c in psutil net connections c port c laddr[ 1 ]if c port port continuestatus c status lower cnts[status] + 1return cnts",
+    "question": "For what purpose do states count ?",
+    "answer": "for specified port",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def Get Libraries spec libraries spec get 'libraries' [] found Ordered Set unique libraries list []for entry in reversed libraries library re sub '^\\\\-l' '' entry if not os path splitext library [1 ] library + ' lib'if library not in found found add library unique libraries list append library unique libraries list reverse return unique libraries list",
+    "question": "For what purpose does the list of libraries return ?",
+    "answer": "for this configuration",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def setup hass config component Entity Component logging get Logger name DOMAIN hass SCAN INTERVAL DOMAIN component setup config return True",
+    "question": "For what purpose do events offer ?",
+    "answer": "for calendars",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "@pytest yield fixture def manager request config caplog monkeypatch filecopy if u'tmpdir' in request fixturenames config config replace u' tmp ' request getfuncargvalue u'tmpdir' strpath try mockmanager Mock Manager config request cls name except Exception print caplog text raise yield mockmanager mockmanager shutdown",
+    "question": "For what purpose does the code create a : class : mockmanager ?",
+    "answer": "for this test based on config argument",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def install editor template wait False def call editor self filename line 0 if line is None line 0cmd template format filename pipes quote filename line line print '>' cmd if sys platform startswith 'win' cmd shlex split cmd proc subprocess Popen cmd shell True if wait and proc wait 0 raise Try Next if wait py 3 compat input ' Press Enterwhendoneediting ' get ipython set hook 'editor' call editor get ipython editor template",
+    "question": "For what purpose is the editor called by ipython ?",
+    "answer": "for the % edit magic",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def caffe load image filename color True as uint False with With Timer 'imread' quiet True if as uint img skimage io imread filename else img skimage img as float skimage io imread filename astype np float 32 if img ndim 2 img img[ np newaxis]if color img np tile img 1 1 3 elif img shape[ 2 ] 4 img img[ 3]return img",
+    "question": "For what purpose did the code copy from caffe ?",
+    "answer": "to simplify potential import problems",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def find file path saltenv 'base' **kwargs if 'env' in kwargs salt utils warn until ' Oxygen' \" Parameter'env'hasbeendetectedintheargumentlist Thisparameterisnolongerusedandhasbeenreplacedby'saltenv'asof Salt 2016 11 0 Thiswarningwillberemovedin Salt Oxygen \" kwargs pop 'env' fnd {'bucket' None 'path' None}metadata init if not metadata or saltenv not in metadata return fndenv files find files metadata[saltenv] if not is env per bucket path os path join saltenv path for bucket name files in six iteritems env files if path in files and not fs is file ignored opts path fnd['bucket'] bucket namefnd['path'] pathif not fnd['path'] or not fnd['bucket'] return fndcached file path get cached file name fnd['bucket'] saltenv path get file from s3 metadata saltenv fnd['bucket'] path cached file path return fnd",
+    "question": "For what purpose do through the buckets cache file look ?",
+    "answer": "for a match",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def publish doctree source source path None source class io String Input reader None reader name 'standalone' parser None parser name 'restructuredtext' settings None settings spec None settings overrides None config section None enable exit status False pub Publisher reader reader parser parser writer None settings settings source class source class destination class io Null Output pub set components reader name parser name 'null' pub process programmatic settings settings spec settings overrides config section pub set source source source path pub set destination None None output pub publish enable exit status enable exit status return pub document",
+    "question": "For what purpose did the code run a publisher ?",
+    "answer": "for programmatic use with string i / o",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def chhome name home persist False pre info info name if not pre info raise Command Execution Error \" User'{ 0 }'doesnotexist\" format name if home pre info['home'] return Truecmd ['usermod' '-d' home]if persist cmd append '-m' cmd append name salt ['cmd run'] cmd python shell False return info name get 'home' home",
+    "question": "For what purpose did the code set a new home directory for an existing user name username ?",
+    "answer": "to modify home new home directory to set persist",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def rot axis 1 theta ct cos theta st sin theta lil 1 0 0 0 ct st 0 - st ct return Matrix lil",
+    "question": "For what purpose does a rotation matrix return ?",
+    "answer": "for a rotation of theta about the 1-axis",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def load Random Forest Model R Fmodel Name is Regression False try fo open R Fmodel Name + 'MEANS' 'rb' except IO Error print \" Load Random Forest Model Didn'tfindfile\"returntry MEAN c Pickle load fo STD c Pickle load fo if not is Regression class Names c Pickle load fo mt Win c Pickle load fo mt Step c Pickle load fo st Win c Pickle load fo st Step c Pickle load fo compute BEAT c Pickle load fo except fo close fo close MEAN numpy array MEAN STD numpy array STD COEFF []with open R Fmodel Name 'rb' as fid RF c Pickle load fid if is Regression return RF MEAN STD mt Win mt Step st Win st Step compute BEAT else return RF MEAN STD class Names mt Win mt Step st Win st Step compute BEAT",
+    "question": "For what purpose does this function load an svm model ?",
+    "answer": "either for classification or training",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def cursor return connections[router db for read Document ] cursor",
+    "question": "For what purpose do a db cursor return ?",
+    "answer": "for reading",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def squared loss y true y pred return y true - y pred ** 2 mean / 2",
+    "question": "For what purpose does the code compute the squared loss ?",
+    "answer": "for regression",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def user cache dir appname appauthor None version None opinion True if sys platform startswith 'win' if appauthor is None raise App Dirs Error \"mustspecify'appauthor'on Windows\" path os path join get win folder 'CSIDL LOCAL APPDATA' appauthor appname if opinion path os path join path ' Cache' elif sys platform 'darwin' path os path join os path expanduser '~/ Library/ Caches' appname else path os path join os getenv 'XDG CACHE HOME' os path expanduser '~/ cache' appname lower if version path os path join path version return path",
+    "question": "For what purpose do full path return to the user - specific cache ?",
+    "answer": "for this application",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def hr search s3 filter FS 'application active' True s3 prep lambda r r method 'search ac' return s3 rest controller 'hrm' 'human resource'",
+    "question": "For what purpose did human resource rest controller limit to just search_ac ?",
+    "answer": "for use in autocompletes",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def remove volume type access context volume type id project id if volume type id is None msg 'volume type idcannotbe None' raise exception Invalid Volume Type reason msg elevated context if context is admin else context elevated if is public volume type elevated volume type id msg ' Typeaccessmodificationisnotapplicabletopublicvolumetype ' raise exception Invalid Volume Type reason msg db volume type access remove elevated volume type id project id notify about volume type access usage context volume type id project id 'access remove'",
+    "question": "For what purpose does the code remove access to volume type ?",
+    "answer": "for project_id",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def const factory value assert not isinstance value Node NG try return CONST CLS[value class ] value except Key Error Attribute Error node Empty Node node object valuereturn node",
+    "question": "For what purpose do an astroid node return ?",
+    "answer": "for a python value",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def get rev primer seqs mapping fp hds mapping data run description errors warnings process id map mapping fp has barcodes False disable primer check True if errors for curr err in errors if curr err startswith ' Duplicate Sample ID' raise Value Error ' Errorswerefoundwithmappingfile ' + 'pleaserunvalidate mapping file pyto' + 'identifyproblems ' id map {}for curr data in mapping data id map[curr data[ 0 ]] {}for header in range len hds for curr data in mapping data id map[curr data[ 0 ]][hds[header]] curr data[header]reverse primers {}for curr id in id map keys try reverse primers[curr id] [str DNA curr rev primer rc for curr rev primer in id map[curr id][' Reverse Primer'] split ' ' ]except Key Error raise Key Error ' Reverseprimernotfoundinmappingfile ' + \"pleaseincludea' Reverse Primer'column \" for curr err in errors if curr err startswith ' Invalid DN Asequencedetected' raise Value Error ' Problemsfoundwithreverseprimers please' + 'checkmappingfilewithvalidate mapping file py' return reverse primers",
+    "question": "For what purpose does mapping file parse ?",
+    "answer": "to get dictionary of sampleid : rev primer mapping_fp : mapping filepath",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def apply Lookup Table data lut if data dtype kind not in 'i' 'u' data data astype int return np take lut data axis 0 mode 'clip'",
+    "question": "For what purpose does values in * data * use as indexes ?",
+    "answer": "to select values from * lut *",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def truncate digest for ecdsa ec key cdata digest backend lib backend lib ffi backend ffigroup lib EC KEY get 0 group ec key cdata with backend tmp bn ctx as bn ctx order lib BN CTX get bn ctx backend openssl assert order ffi NULL res lib EC GROUP get order group order bn ctx backend openssl assert res 1 order bits lib BN num bits order return truncate digest digest order bits",
+    "question": "For what purpose does this function truncate digests that are longer than a given elliptic curve keys length ?",
+    "answer": "so they can be signed",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "@util positional 2 def api name version description None hostname None audiences None scopes None allowed client ids None canonical name None auth None return Api Decorator name version description description hostname hostname audiences audiences scopes scopes allowed client ids allowed client ids canonical name canonical name auth auth",
+    "question": "For what purpose does the code decorate a protorpc service class ?",
+    "answer": "for use by the framework above",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def expand cloned elements return itertools chain *[x cloned set for x in elements]",
+    "question": "For what purpose does the code expand the given set of clauseelements ?",
+    "answer": "to be the set of all cloned predecessors",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "@taskdef copy release files with cd '/home/vagrant/repos/sympy' run 'mkdir-p/vagrant/release' run 'cpdist/*/vagrant/release/'",
+    "question": "For what purpose does the code move the release files ?",
+    "answer": "to release/ locally",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def str wrap arr width **kwargs kwargs['width'] widthtw textwrap Text Wrapper **kwargs return na map lambda s '\\n' join tw wrap s arr",
+    "question": "For what purpose do long strings in the series / index wrap ?",
+    "answer": "to be formatted in paragraphs with length less than a given width",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def gridsearch Classifier documents [] folds 10 **kwargs def product *args p [[]]for iterable in args p [ x + [y] for x in p for y in iterable]for p in p yield tuple p s []p []for k v in kwargs items p append [ k v for v in v] for p in product *p p dict p s append K fold cross validation Classifier documents folds **p p return sorted s reverse True",
+    "question": "For what purpose does the test results return ?",
+    "answer": "for every combination of optional parameters",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def get resource ignore params params ignore params []for param in params result jmespath compile param target current result parsedwhile current['children'] current current['children'][ 0 ]if current['type'] 'field' ignore params append current['value'] return ignore params",
+    "question": "For what purpose does which parameters ignore ?",
+    "answer": "for actions",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def rotate token request request META update {'CSRF COOKIE USED' True 'CSRF COOKIE' get new csrf token } request csrf cookie needs reset True",
+    "question": "For what purpose should the csrf token in use for a request be done on login ?",
+    "answer": "for security purposes",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def get job ids **filter data query models Test View query objects filter data job ids set for test view in query values 'job tag' distinct first tag component test view['job tag'] split '-' [0 ]try job id int first tag component job ids add job id except Value Error passreturn list job ids",
+    "question": "For what purpose does afe job ids return ?",
+    "answer": "for all tests matching the filters",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def slice 2 gridspec key if len key 2 or not isinstance key[ 0 ] slice or not isinstance key[ 1 ] slice raise Value Error 'only 2 - Dslices please' x0 key[ 1 ] startx 1 key[ 1 ] stopxstep key[ 1 ] stepif not isinstance xstep complex or int xstep real xstep real raise Value Error 'onlythe[start stop numsteps* 1 j]formsupported' xstep int xstep imag y0 key[ 0 ] starty 1 key[ 0 ] stopystep key[ 0 ] stepif not isinstance ystep complex or int ystep real ystep real raise Value Error 'onlythe[start stop numsteps* 1 j]formsupported' ystep int ystep imag return x0 x1 xstep y0 y1 ystep",
+    "question": "For what purpose does the code convert a 2-tuple of slices ?",
+    "answer": "to start",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def publish from doctree document destination path None writer None writer name 'pseudoxml' settings None settings spec None settings overrides None config section None enable exit status None reader docutils readers doctree Reader parser name 'null' pub Publisher reader None writer source io Doc Tree Input document destination class io String Output settings settings if not writer and writer name pub set writer writer name pub process programmatic settings settings spec settings overrides config section pub set destination None destination path return pub publish enable exit status enable exit status",
+    "question": "For what purpose did the code set a publisher ?",
+    "answer": "to render from an existing document tree data structure",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def save backend configuration dataset backend name dataset backend configuration dataset path File Path mkdtemp child 'dataset-backend yml' print ' Savingdatasetbackendconfigto {}' format dataset path path dataset path set Content yaml safe dump {dataset backend name name dataset backend configuration} return dataset path",
+    "question": "For what purpose does the code save the backend configuration to a local file ?",
+    "answer": "for consumption by the trial process",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def get cls kwargs cls set None toplevel set None if toplevel set set ctr cls dict get ' init ' False has init ctr and isinstance ctr types Function Type and isinstance ctr code types Code Type if has init names has kw inspect func args ctr set update names if not has kw and not toplevel return Noneif not has init or has kw for c in cls bases if get cls kwargs c set is None break set discard 'self' return set",
+    "question": "For what purpose do the full set of inherited kwargs return ?",
+    "answer": "for the given cls",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def compare Execution Order Ascending module other Module if module global Execution Order < other Module global Execution Order return -1 if module global Execution Order > other Module global Execution Order return 1if module name < other Module name return -1 return int module name > other Module name",
+    "question": "For what purpose does the code get comparison ?",
+    "answer": "in order to sort modules in ascending execution order",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def address type address return len address 4 and TYPE A or TYPE AAAA",
+    "question": "For what purpose do appropriate record type return ?",
+    "answer": "for an address",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def url path join *pieces initial pieces[ 0 ] startswith '/' final pieces[ -1 ] endswith '/' stripped [s strip '/' for s in pieces]result '/' join s for s in stripped if s if initial result '/' + result if final result result + '/' if result '//' result '/'return result",
+    "question": "For what purpose do components of url join into a relative url use ?",
+    "answer": "to prevent double slash when joining subpath",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def get gcp environment credentials service account email credentials file project id if not service account email service account email get gcp environ var 'GCE EMAIL' None if not credentials file credentials file get gcp environ var 'GCE CREDENTIALS FILE PATH' None or get gcp environ var 'GOOGLE APPLICATION CREDENTIALS' None or get gcp environ var 'GCE PEM FILE PATH' None if not project id project id get gcp environ var 'GCE PROJECT' None or get gcp environ var 'GOOGLE CLOUD PROJECT' None return service account email credentials file project id",
+    "question": "For what purpose do in environment variables look ?",
+    "answer": "for credentials",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def rgw pools missing **kwargs return ceph cfg rgw pools missing **kwargs",
+    "question": "For what purpose do pools miss ?",
+    "answer": "for rgw cli",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def create Tree num nodes root Node num nodes // 2 for i in range num nodes if i num nodes // 2 continueroot insert i root return root",
+    "question": "For what purpose did a function create ?",
+    "answer": "to construct the tree from 0 to num_nodes",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def summarize trans history None summary Workflow Summary trans history return summary jobs summary warnings",
+    "question": "For what purpose do mapping of job description to datasets for active items in supplied history - needed return ?",
+    "answer": "for building workflow from a history",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def clear mnt ret {}nbds set for m pt dev in six iteritems mnt mnt ret salt ['mount umount'] m pt if mnt ret is not True ret[m pt] devnbds add dev[ dev rindex 'p' ] if ret return retfor nbd in nbds salt ['cmd run'] 'qemu-nbd-d{ 0 }' format nbd python shell False return ret",
+    "question": "For what purpose did the mnt dict return from nbd_mount ?",
+    "answer": "to unmount and disconnect the image from nbd",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "@removals remove message 'keystoneclientauthpluginsaredeprecated Usekeystoneauth ' version '2 1 0' removal version '3 0 0' def register conf options conf group conf register opt AUTH SECTION OPT group group if conf[group] auth section group conf[group] auth sectionconf register opt AUTH PLUGIN OPT group group",
+    "question": "For what purpose are the oslo_config options needed ?",
+    "answer": "for a plugin",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def name to kw category cls name def target split name ' Splitanamethatcontainsmultiplewords \\n\\n Nameis link campaign-subreddit wherelinkandcampaignare\\nthingfullnames campaignandsubredditareeachoptional so\\nthestringcouldlooklikeanyofthese \\n t3 bh t8 ab-pics t3 bh t8 ab t3 bh -pics t3 bh \\n Alsocheckfortheoldformat t3 by pics \\n\\n' link codename target info namecampaign codename Noneif not target info subreddit ''elif target info find '-' -1 campaign codename subreddit target info split '-' 1 elif target info find ' ' -1 campaign codename target infosubreddit ''else subreddit target inforeturn {'codename' campaign codename or link codename 'subreddit' subreddit}d { Sitewide Pageviews lambda n {} Pageviews By Subreddit lambda n {'subreddit' n} Pageviews By Subreddit And Path lambda n {'srpath' n} Pageviews By Language lambda n {'lang' n} Clickthroughs By Codename lambda n {'codename' name} Ad Impressions By Codename lambda n {'codename' name} Targeted Clickthroughs By Codename target split Targeted Impressions By Codename target split}return d[category cls] name",
+    "question": "For what purpose did the keywords need ?",
+    "answer": "to build an instance of traffic data",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def organize states for post update base mapper states uowtransaction return connections for states base mapper uowtransaction states",
+    "question": "For what purpose does the code make an initial pass across a set of states ?",
+    "answer": "for update corresponding to post_update",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def list id mappings with sql session for read as session refs session query mapping sql ID Mapping all return [x to dict for x in refs]",
+    "question": "For what purpose do all id_mappings list ?",
+    "answer": "for testing purposes",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def title from content content for end in u' ' u'?' u' ' u'<br/>' u'\\n' u'</p>' if end in content content content split end [0 ] + end breakreturn strip tags content",
+    "question": "For what purpose do the first sentence extract from a block of test ?",
+    "answer": "to use as a title",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def user documentation text header section examples None if examples is None examples []def deco f f user documentation User Documentation text text examples pvector examples header header section section return freturn deco",
+    "question": "For what purpose does the code annotate a klein - style endpoint ?",
+    "answer": "to include user - facing documentation",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def make increasing candle open high low close dates **kwargs increase x increase y Candlestick open high low close dates **kwargs get candle increase if 'line' in kwargs kwargs setdefault 'fillcolor' kwargs['line']['color'] else kwargs setdefault 'fillcolor' DEFAULT INCREASING COLOR if 'name' in kwargs kwargs setdefault 'showlegend' True else kwargs setdefault 'showlegend' False kwargs setdefault 'name' ' Increasing' kwargs setdefault 'line' dict color DEFAULT INCREASING COLOR candle incr data dict type 'box' x increase x y increase y whiskerwidth 0 boxpoints False **kwargs return [candle incr data]",
+    "question": "For what purpose do the increasing traces separate from the decreasing traces ?",
+    "answer": "be passed separately to increasing or decreasing traces",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def tamper payload **kwargs headers kwargs get 'headers' {} headers['X-originating-IP'] '127 0 0 1'return payload",
+    "question": "For what purpose does the code append a http header x - originating - ip ?",
+    "answer": "to bypass waf protection of varnish firewall notes",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def jsonify request response content {'status' response status code 'content' smart str response content response charset }return Http Response json dumps content content type 'application/json'",
+    "question": "For what purpose does the code turn any response in a 200 response ?",
+    "answer": "to let jquery code handle it nicely",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def server evt serv dataq None serv listen 5 evt set try conn addr serv accept if dataq data ''new data dataq get True 0 5 dataq task done for item in new data if item EOF sigil breakif type item in [int float] time sleep item else data + itemwritten conn send data data data[written ]except socket timeout passelse conn close finally serv close evt set",
+    "question": "For what purpose does the code set evt to true if is not false ?",
+    "answer": "to let the parent know we are ready",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "@pipeline stagedef log files session task if isinstance task Singleton Import Task log info u' Singleton {0 }' displayable path task item['path'] elif task items log info u' Album {0 }' displayable path task paths[ 0 ] for item in task items log info u'{ 0 }' displayable path item['path']",
+    "question": "For what purpose do a coroutine log each file ?",
+    "answer": "to be imported",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def letterbox image shape assert len image shape 3 assert len shape 2 assert image shape[ 0 ] < shape[ 0 ] assert image shape[ 1 ] < shape[ 1 ] if image shape[ 0 ] shape[ 0 ] and image shape[ 1 ] shape[ 1 ] return image copy rval np zeros shape[ 0 ] shape[ 1 ] image shape[ 2 ] dtype image dtype rstart shape[ 0 ] - image shape[ 0 ] / 2 cstart shape[ 1 ] - image shape[ 1 ] / 2 rend rstart + image shape[ 0 ] cend cstart + image shape[ 1 ] rval[rstart rend cstart cend] imagereturn rval",
+    "question": "For what purpose does image pad with black letterboxing ?",
+    "answer": "to bring image",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def test factory support as data True if support as data return Data Model Tester Support As Data Mixinelse return Data Model Tester Not Support As Data Mixin",
+    "question": "For what purpose do a unittest testcase return ?",
+    "answer": "for testing",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def register tag cls json tags[ TAG PREFIX + getattr cls 'json tag' ] clsreturn cls",
+    "question": "For what purpose does the code decorate a class ?",
+    "answer": "to register its json tag",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def file open *args **kwargs return file *args **kwargs",
+    "question": "For what purpose do the reason this is kept in a separate module is to easily be able to provide a stub module that does nt alter system state at all note ?",
+    "answer": "for more",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def log configure for key value in settings LOGGING items if isinstance cfg[key] dict cfg[key] update value else cfg[key] value USE SYSLOG settings HAS SYSLOG and not settings DEBUG if USE SYSLOG cfg['loggers']['z timer'] {'handlers' ['syslog 2 ']}for logger in cfg['loggers'] values + [cfg['root']] if 'handlers' not in logger logger['handlers'] [ 'syslog' if USE SYSLOG else 'console' ]if 'level' not in logger logger['level'] settings LOG LEVE Lif logger is not cfg['root'] and 'propagate' not in logger logger['propagate'] Falselogging config dict Config cfg",
+    "question": "For what purpose do you call this explicitly ?",
+    "answer": "to configure logging",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def normalize points for row in points row / points[ -1 ]return points",
+    "question": "For what purpose does the code normalize a collection of points in homogeneous coordinates ?",
+    "answer": "so that last row = 1",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def write degapped fasta to file seqs tmp dir get qiime temp dir fd tmp filename tempfile mkstemp dir tmp dir prefix 'degapped ' suffix ' fasta' close fd with open tmp filename 'w' as fh for seq in degap fasta aln seqs fh write seq to fasta return tmp filename",
+    "question": "For what purpose do degapped seqs write ?",
+    "answer": "to temp fasta file",
+    "_category": "For what purpose"
+  },
+  {
+    "code": "def normalize server settings **settings ret dict settings salt utils clean kwargs **settings for setting in settings if isinstance settings[setting] dict LOG debug ' Fixingvalue %s' settings[setting] value from key next six iterkeys settings[setting] ret[setting] '{{{ 0 }}}' format value from key else ret[setting] settings[setting]return ret",
+    "question": "How had setting values been converted to a dict back to a string ?",
+    "answer": "improperly",
+    "_category": "How"
+  },
+  {
+    "code": "def get Geometry Output By Arguments arguments element Node evaluate set Attributes By Arguments ['radius' 'start' 'end'] arguments element Node return get Geometry Output None element Node",
+    "question": "How does the code get vector3 vertexes from attribute dictionary ?",
+    "answer": "by arguments",
+    "_category": "How"
+  },
+  {
+    "code": "def volume absent name force False recursive False return absent name 'volume' force recursive",
+    "question": "How do to destroy the dataset recursive try ?",
+    "answer": "harder",
+    "_category": "How"
+  },
+  {
+    "code": "def request middleware api None def decorator middleware method apply to api hug API api if api else hug api from object middleware method class Middleware Router object slots def process request self request response return middleware method request response apply to api http add middleware Middleware Router return middleware methodreturn decorator",
+    "question": "How will a middleware function be called ?",
+    "answer": "on every request",
+    "_category": "How"
+  },
+  {
+    "code": "def pipe data *funcs for func in funcs data func data return data",
+    "question": "How do a value pipe ?",
+    "answer": "through a sequence of functions i",
+    "_category": "How"
+  },
+  {
+    "code": "def crelu x axis 1 return C Re LU axis axis x",
+    "question": "How did the code rectify linear unit function ?",
+    "answer": "concatenated",
+    "_category": "How"
+  },
+  {
+    "code": "def idd frm n w x return id idd frm n w x",
+    "question": "How do real vector transform ?",
+    "answer": "via a composition of rokhlins random transform",
+    "_category": "How"
+  },
+  {
+    "code": "def generate lines text for line in text splitlines True yield line while True yield ''",
+    "question": "How does generator behave like readline ?",
+    "answer": "without using stringio",
+    "_category": "How"
+  },
+  {
+    "code": "def update fid body url build url RESOURCE id fid return request 'put' url json body",
+    "question": "How does the code update a grid ?",
+    "answer": "from plotly",
+    "_category": "How"
+  },
+  {
+    "code": "def bind oscid func oscaddress global osc Threadsthread osc Threads get oscid None if thread is None assert ' Unknownthread'thread address Manager add func oscaddress",
+    "question": "How did oscaddresses give the code ?",
+    "answer": "bind",
+    "_category": "How"
+  },
+  {
+    "code": "def apply boosts searcher return searcher boost question title 4 0 question content 3 0 question answer content 3 0 post title 2 0 post content 1 0 document title 6 0 document content 1 0 document keywords 8 0 document summary 2 0 document title match phrase 10 0 document content match phrase 8 0",
+    "question": "How do searcher return ?",
+    "answer": "with boosts applied",
+    "_category": "How"
+  },
+  {
+    "code": "@with open mode 'w' @with sizes 'small' def write bytewise f source for i in xrange 0 len source f write source[i i + 1 ]",
+    "question": "How does the code write one unit ?",
+    "answer": "at a time",
+    "_category": "How"
+  },
+  {
+    "code": "def slow responder ctx zmq Context instance socket ctx socket zmq REP socket linger 0socket bind 'tcp // 127 0 0 1 5555 ' i 0while True msg socket recv print '\\nworkerreceived%r\\n' % msg time sleep random randint 1 5 socket send msg + 'toyoutoo #%i' % i i + 1",
+    "question": "How do to replies respond ?",
+    "answer": "slowly",
+    "_category": "How"
+  },
+  {
+    "code": "def clean str string string re sub \"[^A- Za-z 0 - 9 ?\\\\'\\\\`]\" '' string string re sub \"\\\\'s\" \"'s\" string string re sub \"\\\\'ve\" \"'ve\" string string re sub \"n\\\\'t\" \"n't\" string string re sub \"\\\\'re\" \"'re\" string string re sub \"\\\\'d\" \"'d\" string string re sub \"\\\\'ll\" \"'ll\" string string re sub ' ' ' ' string string re sub ' ' ' ' string string re sub '\\\\ ' '\\\\ ' string string re sub '\\\\ ' '\\\\ ' string string re sub '\\\\?' '\\\\?' string string re sub '\\\\s{ 2 }' '' string return string strip lower",
+    "question": "How do tokenization / string clean tokenization / string ?",
+    "answer": "code",
+    "_category": "How"
+  },
+  {
+    "code": "def run quiet cmd cwd None stdin None runas None shell DEFAULT SHELL python shell False env None template None umask None timeout None reset system locale True saltenv 'base' pillarenv None pillar override None return run cmd runas runas cwd cwd stdin stdin stderr subprocess STDOUT output loglevel 'quiet' log callback None shell shell python shell python shell env env template template umask umask timeout timeout reset system locale reset system locale saltenv saltenv pillarenv pillarenv pillar override pillar override ['stdout']",
+    "question": "How do commands run for minion startup ?",
+    "answer": "quietly",
+    "_category": "How"
+  },
+  {
+    "code": "def walk trees store tree 1 id tree 2 id prune identical False mode 1 tree 1 id and stat S IFDIR or None mode 2 tree 2 id and stat S IFDIR or None todo [ Tree Entry '' mode 1 tree 1 id Tree Entry '' mode 2 tree 2 id ]while todo entry 1 entry 2 todo pop is tree 1 is tree entry 1 is tree 2 is tree entry 2 if prune identical and is tree 1 and is tree 2 and entry 1 entry 2 continuetree 1 is tree 1 and store[entry 1 sha] or None tree 2 is tree 2 and store[entry 2 sha] or None path entry 1 path or entry 2 path todo extend reversed merge entries path tree 1 tree 2 yield entry 1 entry 2",
+    "question": "How do all the entries of two trees walk ?",
+    "answer": "recursively",
+    "_category": "How"
+  },
+  {
+    "code": "def expand dictionary record separator ' ' result {}for key value in record items current resultpath key split separator for part in path[ -1 ] if part not in current current[part] {}current current[part]current[path[ -1 ]] valuereturn result",
+    "question": "How did paths separate ?",
+    "answer": "by separator",
+    "_category": "How"
+  },
+  {
+    "code": "def test cache config disable private browsing config stub tmpdir config stub data {'storage' {'cache-size' 1024 } 'general' {'private-browsing' True}}url 'http //qutebrowser org'metadata Q Network Cache Meta Data metadata set Url Q Url url assert metadata is Valid disk cache cache Disk Cache str tmpdir assert disk cache prepare metadata is None config stub set 'general' 'private-browsing' False content 'cute'preload cache disk cache url content assert disk cache data Q Url url read All content",
+    "question": "How do config browse ?",
+    "answer": "private",
+    "_category": "How"
+  },
+  {
+    "code": "def get Teardrop Path By End Start element Node end radius start inclination get Inclination end start sides evaluate get Sides Minimum Three Based On Precision Sides element Node radius radius Arealized evaluate get Radius Arealized Based On Area Radius element Noderadius sides return get Teardrop Path inclination setting get Overhang Radians element Node setting get Overhang Span element Node radius Arealized sides",
+    "question": "How does the code get vector3 teardrop path ?",
+    "answer": "by end and start",
+    "_category": "How"
+  },
+  {
+    "code": "def invoke trans workflow workflow run config workflow invocation None populate state False if populate state modules populate module and state trans workflow workflow run config param map allow tool state corrections workflow run config allow tool state corrections invoker Workflow Invoker trans workflow workflow run config workflow invocation workflow invocation try outputs invoker invoke except modules Cancel Workflow Evaluation if workflow invocation if workflow invocation cancel trans sa session add workflow invocation outputs []except Exception log exception ' Failedtoexecutescheduledworkflow ' if workflow invocation workflow invocation fail trans sa session add workflow invocation else raiseoutputs []if workflow invocation trans sa session flush return outputs invoker workflow invocation",
+    "question": "How does the code run the supplied workflow ?",
+    "answer": "in the supplied target_history",
+    "_category": "How"
+  },
+  {
+    "code": "def rand number length 0 exclude numbers digits digits[ ]for excluded number in set exclude numbers digits digits replace str excluded number '' if not digits raise Value Error ' Failedreturnrandomnumber ' ru '' join choice digits for in xrange length or randint 10 30 return ru",
+    "question": "How does the code create a random string ?",
+    "answer": "only with numbers",
+    "_category": "How"
+  },
+  {
+    "code": "def sh legendre n monic False if n < 0 raise Value Error 'nmustbenonnegative ' wfunc lambda x 0 0 * x + 1 0 if n 0 return orthopoly 1 d [] [] 1 0 1 0 wfunc 0 1 monic lambda x eval sh legendre n x x w mu 0 roots sh legendre n mu True hn 1 0 / 2 * n + 1 0 kn gam 2 * n + 1 / gam n + 1 ** 2 p orthopoly 1 d x w hn kn wfunc limits 0 1 monic monic eval func lambda x eval sh legendre n x return p",
+    "question": "How did the code shift ?",
+    "answer": "legendre polynomial",
+    "_category": "How"
+  },
+  {
+    "code": "def recall classify lambda document False documents [] average None return test classify documents average [2 ]",
+    "question": "How does the percentage of positive cases classify as positive ?",
+    "answer": "correctly",
+    "_category": "How"
+  },
+  {
+    "code": "def order cluster tree Z q deque tree to tree Z q append tree nodes []while q node q popleft if not node is leaf bisect insort left nodes node q append node get right q append node get left return nodes",
+    "question": "How do nodes cluster order ?",
+    "answer": "in bottom - up",
+    "_category": "How"
+  },
+  {
+    "code": "def validation task fn @task bind True ignore result False soft time limit settings VALIDATOR TIMEOUT @wraps fn def wrapper task id hash *args **kw task ignore result Truetry data fn id hash *args **kw result json loads data if hash from utils import Validation Comparator Validation Comparator result annotate results hash return resultexcept Exception as e log exception ' Unhandlederrorduringvalidation %r' % e is webextension kw get 'is webextension' False if is webextension return deepcopy amo VALIDATOR SKELETON EXCEPTION WEBEXT return deepcopy amo VALIDATOR SKELETON EXCEPTION finally task ignore result Falsereturn wrapper",
+    "question": "How do it run ?",
+    "answer": "with the correct flags",
+    "_category": "How"
+  },
+  {
+    "code": "def deprecated func def new func *args **dargs warnings warn ' Calltodeprecatedfunction%s ' % func name category Deprecation Warning return func *args **dargs new func name func name new func doc func doc new func dict update func dict return new func",
+    "question": "How did functions mark ?",
+    "answer": "as deprecated",
+    "_category": "How"
+  },
+  {
+    "code": "def sign pkey data digest data text to bytes and warn 'data' data digest obj lib EVP get digestbyname byte string digest if digest obj ffi NULL raise Value Error ' Nosuchdigestmethod' md ctx ffi new 'EVP MD CTX*' md ctx ffi gc md ctx lib EVP MD CTX cleanup lib EVP Sign Init md ctx digest obj lib EVP Sign Update md ctx data len data signature buffer ffi new 'unsignedchar[]' 512 signature length ffi new 'unsignedint*' signature length[ 0 ] len signature buffer final result lib EVP Sign Final md ctx signature buffer signature length pkey pkey if final result 1 raise current error return ffi buffer signature buffer signature length[ 0 ] [ ]",
+    "question": "How do data sign ?",
+    "answer": "with a digest",
+    "_category": "How"
+  },
+  {
+    "code": "def test plot cov raw get raw cov read cov cov fname with warnings catch warnings record True fig 1 fig 2 cov plot raw info proj True exclude raw ch names[ 6 ]",
+    "question": "How do of covariances plot ?",
+    "answer": "test",
+    "_category": "How"
+  },
+  {
+    "code": "@taskdef test travis else ctx flake ctx jshint ctx test else ctx",
+    "question": "How do travis go ?",
+    "answer": "faster",
+    "_category": "How"
+  },
+  {
+    "code": "def test adjust sigmoid cutoff one image np arange 0 255 4 np uint 8 reshape 8 8 expected np array [[ 1 1 1 2 2 2 2 2] [3 3 3 4 4 4 5 5] [5 6 6 7 7 8 9 10 ] [10 11 12 13 14 15 16 18 ] [19 20 22 24 25 27 29 32 ] [34 36 39 41 44 47 50 54 ] [57 61 64 68 72 76 80 85 ] [89 94 99 104 108 113 118 123 ]] dtype np uint 8 result exposure adjust sigmoid image 1 5 assert array equal result expected",
+    "question": "How does the code verify the output ?",
+    "answer": "with expected results for sigmoid correction with cutoff equal to one and gain of 5",
+    "_category": "How"
+  },
+  {
+    "code": "def clear context keep context 'docker client' 'docker exec driver' 'dockerng pull status' 'docker docker version' 'docker docker py version' for key in list context try if key startswith 'docker ' and key not in keep context context pop key except Attribute Error pass",
+    "question": "How did values store ?",
+    "answer": "in context",
+    "_category": "How"
+  },
+  {
+    "code": "def run on executor *args **kwargs def run on executor decorator fn executor kwargs get 'executor' 'executor' io loop kwargs get 'io loop' 'io loop' @functools wraps fn def wrapper self *args **kwargs callback kwargs pop 'callback' None future getattr self executor submit fn self *args **kwargs if callback getattr self io loop add future future lambda future callback future result return futurereturn wrapperif args and kwargs raise Value Error 'cannotcombinepositionalandkeywordargs' if len args 1 return run on executor decorator args[ 0 ] elif len args 0 raise Value Error 'expected 1 argument got%d' len args return run on executor decorator",
+    "question": "How do a synchronous method run on an executor ?",
+    "answer": "asynchronously",
+    "_category": "How"
+  },
+  {
+    "code": "@pytest mark django dbdef test directory create name with slashes or backslashes root with pytest raises Validation Error Directory objects create name 'slashed/name' parent root with pytest raises Validation Error Directory objects create name 'backslashed\\\\name' parent root",
+    "question": "How are test directories not created ?",
+    "answer": "with slashes on their name",
+    "_category": "How"
+  },
+  {
+    "code": "def process Element Node By Derivation derivation element Node if derivation None derivation Write Derivation element Node if len derivation targets < 1 print ' Warning process Element Nodeinwritecouldnotgettargetsfor 'print element Nodereturnfile Names []for target in derivation targets write Element Node derivation file Names target",
+    "question": "How do the xml element process ?",
+    "answer": "by derivation",
+    "_category": "How"
+  },
+  {
+    "code": "def flavor get context id return IMPL flavor get context id",
+    "question": "How d the code get instance type ?",
+    "answer": "by i d",
+    "_category": "How"
+  },
+  {
+    "code": "def load user config path get user config path config {}with open config path as f code compile f read config path 'exec' exec code in configkeys list six iterkeys config for k in keys if k startswith ' ' del config[k]return config",
+    "question": "How did the code return it ?",
+    "answer": "as a dict",
+    "_category": "How"
+  },
+  {
+    "code": "def play complicated paths my paths copy copy paths def next song my paths pop 0 p play file my paths[ 0 ] p Gst Player next song p run p play file my paths[ 0 ] while my paths time sleep 1",
+    "question": "How does the code play the files in the path ?",
+    "answer": "one after the other",
+    "_category": "How"
+  },
+  {
+    "code": "def item show item item id None item type None show 'show' extra args None cibfile None cmd ['pcs']if isinstance cibfile six string types cmd + ['-f' cibfile]if isinstance item six string types cmd + [item]elif isinstance item list tuple cmd + itemif item in ['constraint'] cmd + [item type]if isinstance show six string types cmd + [show]elif isinstance show list tuple cmd + showif isinstance item id six string types cmd + [item id]if isinstance extra args list tuple cmd + extra argsif item in ['constraint'] if not isinstance extra args list tuple or '--full' not in extra args cmd + ['--full']return salt ['cmd run all'] cmd output loglevel 'trace' python shell False",
+    "question": "How do an item show ?",
+    "answer": "via pcs command item config",
+    "_category": "How"
+  },
+  {
+    "code": "def text 2 string content try return ast literal eval content + '\\n' except Exception return content + '\\n'",
+    "question": "How does a string return ?",
+    "answer": "without the extra triple quotes",
+    "_category": "How"
+  },
+  {
+    "code": "def report invalid attribute name value reason logging error 'invalid Cookieattribute %s %r %r' reason name value",
+    "question": "How does this module log a bad attribute when exception suppressed ?",
+    "answer": "how",
+    "_category": "How"
+  },
+  {
+    "code": "def issue owner repository number return gh issue owner repository number",
+    "question": "How does issue : number get on : owner/:repository ?",
+    "answer": "anonymously",
+    "_category": "How"
+  },
+  {
+    "code": "def get permission perms p for name in permlist perms[name] has permission p getattr PERMS name",
+    "question": "How does a dict return ?",
+    "answer": "with permission key",
+    "_category": "How"
+  },
+  {
+    "code": "def test isiterable t1 Time now assert not isiterable t1 t2 Time [' 1999 - 01 - 0100 00 00 123456789 ' '2010 - 01 - 0100 00 00 '] format 'iso' scale 'utc' assert isiterable t2",
+    "question": "How are by the isiterable utility not reported scalar time instances ?",
+    "answer": "as iterable",
+    "_category": "How"
+  },
+  {
+    "code": "def load ipython extension ipython if not ipython find line magic 'sql' ipython run line magic 'load ext' 'sql' ipython register magic function pgcli line magic 'line' 'pgcli'",
+    "question": "How is this called ?",
+    "answer": "via the ipython command % load_ext pgcli",
+    "_category": "How"
+  },
+  {
+    "code": "def conll demo dg Dependency Graph conll data 1 tree dg tree tree pprint print dg print dg to conll 4",
+    "question": "How do a string representation of a conll format dependency tree read ?",
+    "answer": "how",
+    "_category": "How"
+  },
+  {
+    "code": "@open file 1 mode 'wb' def write adjlist G path comments '#' delimiter '' encoding 'utf- 8 ' import sysimport timepargs comments + '' join sys argv + '\\n' header pargs + comments + 'GMT{}\\n' format time asctime time gmtime + comments + '{}\\n' format G name path write header encode encoding for line in generate adjlist G delimiter line + '\\n'path write line encode encoding",
+    "question": "How do graph g write to path ?",
+    "answer": "in single - line adjacency - list format",
+    "_category": "How"
+  },
+  {
+    "code": "def scan build registry xml parent data p XML Sub Element xml parent 'jenkins plugins clangscanbuild publisher Clang Scan Build Publisher' p set 'plugin' 'clang-scanbuild' mappings [ 'mark-unstable' 'mark Build Unstable When Threshold Is Exceeded' False 'threshold' 'bug Threshold' 0 'exclude-paths' 'clangexcludedpaths' '' 'report-folder' 'report Folder Name' 'clang Scan Build Reports' ]helpers convert mapping to xml p data mappings fail required True",
+    "question": "How do static analyzer build ?",
+    "answer": "clang",
+    "_category": "How"
+  },
+  {
+    "code": "def synloop obj connection consumer blueprint hub qos heartbeat clock hbrate 2 0 **kwargs RUN bootsteps RU Non task received obj create task handler perform pending operations obj perform pending operationsif getattr obj pool u'is green' False enable amqheartbeats obj timer connection rate hbrate consumer on message on task receivedconsumer consume obj on ready while blueprint state RUN and obj connection state maybe shutdown if qos prev qos value qos update try perform pending operations connection drain events timeout 2 0 except socket timeout passexcept socket error if blueprint state RUN raise",
+    "question": "How do event loop block ?",
+    "answer": "fallback",
+    "_category": "How"
+  },
+  {
+    "code": "def get enabled prefix '/etc/rc[S{ 0 }] d/S' format get runlevel ret set lines glob glob '{ 0 }*' format prefix for line in lines ret add re split prefix + '\\\\d+' line [1 ] return sorted ret",
+    "question": "How are service enabled ?",
+    "answer": "on boot cli example",
+    "_category": "How"
+  },
+  {
+    "code": "def resource mapping return {'OS Heat Resource Chain' Resource Chain}",
+    "question": "How do the type install ?",
+    "answer": "under a specific name",
+    "_category": "How"
+  },
+  {
+    "code": "@pytest mark parametrize 'fmt name class' fmt name classes def test roundtrip masked fmt name class fmt name fmt cls fmt name classif not getattr fmt cls ' io registry can write' True returnif fmt name 'html' and not HAS BEAUTIFUL SOUP or fmt name 'fixed width' returnt simple table masked True out String IO fast fmt name in ascii core FAST CLASSES try ascii write t out format fmt name fast writer fast except Import Error returnkwargs {'names' t colnames} if 'no header' in fmt name else {} t2 ascii read out getvalue format fmt name fast reader fast guess False **kwargs assert t colnames t2 colnames for col col 2 in zip t itercols t2 itercols assert col dtype kind col 2 dtype kind assert np all col col 2",
+    "question": "How do that reading back gives the same result confirm ?",
+    "answer": "round",
+    "_category": "How"
+  },
+  {
+    "code": "def idz reconint idx proj return id idz reconint idx proj",
+    "question": "How do interpolation matrix reconstruct ?",
+    "answer": "from complex i d",
+    "_category": "How"
+  },
+  {
+    "code": "def initialize events article generator del events[ ]localized events clear",
+    "question": "How do plugins with multiple generation passes like i18n_subsites support ?",
+    "answer": "properly",
+    "_category": "How"
+  },
+  {
+    "code": "def referenced word article INDEFINITE gender MALE s '%s&space %s' % article word article gender word s s replace \"'&space \" \"'\" s s replace '&space ' '' return s",
+    "question": "How does a string return ?",
+    "answer": "with the article + the word",
+    "_category": "How"
+  },
+  {
+    "code": "def rjust s width n width - len s if n < 0 return sreturn '' * n + s",
+    "question": "How do a right - justified version of s return ?",
+    "answer": "rjust",
+    "_category": "How"
+  },
+  {
+    "code": "def s lego lego type value None options {} name 'LEGO %08 x' % len blocks CURRENT names if not legos BIN has key lego type raise sex Sully Runtime Error 'INVALIDLEGOTYPESPECIFIED %s' % lego type lego legos BIN[lego type] name blocks CURRENT value options blocks CURRENT push lego blocks CURRENT pop",
+    "question": "How did blocks build ?",
+    "answer": "pre",
+    "_category": "How"
+  },
+  {
+    "code": "def build Completed List series id question id list db current dbqtable current s3 db survey questionheaders []happend headers appendtypes []items []qstn posn 0row len len question id list complete lookup {}for question id in question id list answers survey get All Answers For Question In Series question id series id widget obj survey get Widget From Question question id question db qtable id question id select qtable name limitby 0 1 first happend question name types append widget obj db type for answer in answers complete id answer['complete id']if complete id in complete lookup row complete lookup[complete id]else row len complete lookup complete lookup[complete id] rowitems append [''] * row len items[row][qstn posn] widget obj repr answer['value'] qstn posn + 1return [headers] + [types] + items",
+    "question": "How will just the questions in the list passed in the list come ?",
+    "answer": "in three parts",
+    "_category": "How"
+  },
+  {
+    "code": "@when u'westartexternaleditorprovidingafilename' def step edit file context context editor file name u'test file {0 } sql' format context conf[u'vi'] if os path exists context editor file name os remove context editor file name context cli sendline u'\\\\e{ 0 }' format context editor file name expect exact context u'nano' timeout 2",
+    "question": "How do file edit ?",
+    "answer": "with external editor",
+    "_category": "How"
+  },
+  {
+    "code": "def delete tile filename coord db connect filename db text factory bytestile row 2 ** coord zoom - 1 - coord row q 'DELETEFRO Mtiles WHER Ezoom level ?AN Dtile column ?AN Dtile row ?'db execute q coord zoom coord column tile row",
+    "question": "How does the code delete a tile ?",
+    "answer": "by coordinate",
+    "_category": "How"
+  },
+  {
+    "code": "def jackknife stats data statistic conf lvl 0 95 from scipy special import erfinvn data shape[ 0 ]assert n > 0 u'datamustcontainatleastonemeasurement'resamples jackknife resampling data stat data statistic data jack stat np apply along axis statistic 1 resamples mean jack stat np mean jack stat axis 0 bias n - 1 * mean jack stat - stat data std err np sqrt n - 1 * np mean jack stat - mean jack stat * jack stat - mean jack stat axis 0 estimate stat data - bias assert conf lvl > 0 and conf lvl < 1 u'confidencelevelmustbein 0 1 'z score np sqrt 2 0 * erfinv conf lvl conf interval estimate + z score * np array - std err std err return estimate bias std err conf interval",
+    "question": "How does jackknife estimation perform ?",
+    "answer": "on the basis of jackknife resamples",
+    "_category": "How"
+  },
+  {
+    "code": "def normalize digits only number keep non digits False number unicod number number length len number normalized digits U EMPTY STRIN Gfor ii in range number length d unicode digit number[ii] -1 if d -1 normalized digits + unicod d elif keep non digits normalized digits + number[ii]return normalized digits",
+    "question": "What do characters represent ?",
+    "answer": "a phone number",
+    "_category": "What"
+  },
+  {
+    "code": "def update emoji global RE EMOJ Iglobal URL EMOJ Iemoji list get github emoji emoji map {}if emoji list is not None for emoji in emoji list url emoji list[emoji]m RE ASSET match url if m emoji map[emoji] m group u'image' if emoji map RE EMOJI u' %s ' % u' ' join [re escape key for key in sorted emoji map keys ] URL EMOJI copy copy emoji map",
+    "question": "What does the code update ?",
+    "answer": "the emoji pattern in memory",
+    "_category": "What"
+  },
+  {
+    "code": "def refresh cache f argspec inspect getargspec f @functools wraps f def wrapper self context *args **kwargs try instance kwargs get 'instance' if not instance instance args[ argspec args index 'instance' - 2 ]except Value Error msg 'instanceisarequiredargumenttouse@refresh cache' raise Exception msg with lockutils lock 'refresh cache-%s' % instance uuid res f self context *args **kwargs update instance cache with nw info self context instance nw info res return resreturn wrapper",
+    "question": "What does to update the instance_info_cache require ?",
+    "answer": "context and instance as function args",
+    "_category": "What"
+  },
+  {
+    "code": "def get font name size encoding 'unic' if name in LIBERATION FONT MAP return Image Font truetype P 'fonts/liberation/%s ttf' % LIBERATION FONT MAP[name] size encoding encoding elif name in FONT FILE MAP return Image Font truetype FONT FILE MAP[name] size encoding encoding",
+    "question": "What does the code get by name ?",
+    "answer": "an imagefont object",
+    "_category": "What"
+  },
+  {
+    "code": "def EI gaussian mean var thresh sigma np sqrt var score old div mean - thresh sigma n scipy stats normreturn sigma * score * n cdf score + n pdf score",
+    "question": "What did the code expect ?",
+    "answer": "improvement of gaussian over threshold",
+    "_category": "What"
+  },
+  {
+    "code": "def test ast good cut can compile u' cutx ' can compile u' cutxy ' can compile u' cutxyz ' can compile u' cutxyzt '",
+    "question": "What can compile valid cut ?",
+    "answer": "ast",
+    "_category": "What"
+  },
+  {
+    "code": "def get child text parent tag construct unicode child parent find ns tag if child is not None and child text return construct child text",
+    "question": "What does the code pass through a constructor ?",
+    "answer": "its text",
+    "_category": "What"
+  },
+  {
+    "code": "def check Sum val 0for root dirs files in os walk os getcwd for extension in EXTENSIONS for f in fnmatch filter files extension stats os stat os path join root f val + stats[stat ST SIZE] + stats[stat ST MTIME] return val",
+    "question": "What can a long be used ?",
+    "answer": "to know if any",
+    "_category": "What"
+  },
+  {
+    "code": "def validate methods plugin base class plugin klass expected methods plugin base class abstractmethods plugin methods get plugin methods plugin klass for method in expected methods if method not in plugin methods message ' Class\"%s\"doesn\\'timplementrequired\"%s\"methodfromthebaseclass'raise Incompatible Plugin Exception message % plugin klass name method",
+    "question": "What has all the * abstract * methods in plugin_base_class at least ?",
+    "answer": "we d",
+    "_category": "What"
+  },
+  {
+    "code": "def log exception level 'warning' tb skip 2 stack '' join traceback format stack [ - tb skip ] tb traceback format exception *sys exc info msg tb[ 0 ]msg + stackmsg + '<<caughtexceptionhere >>\\n'msg + '' join tb[ 1 ] rstrip logger log logging types[level] msg",
+    "question": "What does the code send to the logger ?",
+    "answer": "an exception and traceback",
+    "_category": "What"
+  },
+  {
+    "code": "def get Transform Element Node coords transform Name transform Element Node coords get First Child By Local Name transform Name if len transform Element Node attributes < 16 if 'bf ref' in transform Element Node attributes id Reference transform Element Node attributes['bf ref']return coords get Document Element get Sub Child With ID id Reference return transform Element Node",
+    "question": "What does the code get ?",
+    "answer": "the transform attributes",
+    "_category": "What"
+  },
+  {
+    "code": "def init parser parser argparse Argument Parser description ' Checksifanyupgradeisrequiredandrunsthescriptfortheprocess ' parser add argument '--keyname' help ' Thedeploymentkeyname' parser add argument '--log-postfix' help ' Anidentifierforthestatuslog' parser add argument '--db-master' required True help ' The I Paddressofthe D Bmaster' parser add argument '--zookeeper' nargs '+' help ' Alistof Zoo Keeper I Paddresses' parser add argument '--database' nargs '+' help ' Alistof DBI Paddresses' parser add argument '--replication' type int help ' Thekeyspacereplicationfactor' return parser",
+    "question": "What does the code initialize ?",
+    "answer": "the command line argument parser",
+    "_category": "What"
+  },
+  {
+    "code": "def linear sum assignment cost matrix cost matrix np asarray cost matrix if len cost matrix shape 2 raise Value Error 'expectedamatrix 2-darray gota%rarray' % cost matrix shape if cost matrix shape[ 1 ] < cost matrix shape[ 0 ] cost matrix cost matrix Ttransposed Trueelse transposed Falsestate Hungary cost matrix step None if 0 in cost matrix shape else step 1 while step is not None step step state if transposed marked state marked Telse marked state markedreturn np where marked 1",
+    "question": "What does the code solve ?",
+    "answer": "the linear sum assignment problem",
+    "_category": "What"
+  },
+  {
+    "code": "def require crypto or die if not HAS CRYPTO raise Crypto Unavailable Error ' Nocryptolibraryavailable'",
+    "question": "What do we have ?",
+    "answer": "a crypto library",
+    "_category": "What"
+  },
+  {
+    "code": "def find bezier t intersecting with closedpath bezier point at t inside closedpath t0 0 0 t1 1 0 tolerence 0 01 start bezier point at t t0 end bezier point at t t1 start inside inside closedpath start end inside inside closedpath end if not xor start inside end inside raise Value Error 'thesegmentdoesnotseemedtointersectwiththepath' while 1 if start[ 0 ] - end[ 0 ] ** 2 + start[ 1 ] - end[ 1 ] ** 2 < tolerence ** 2 return t0 t1 middle t 0 5 * t0 + t1 middle bezier point at t middle t middle inside inside closedpath middle if xor start inside middle inside t1 middle tend middleend inside middle insideelse t0 middle tstart middlestart inside middle inside",
+    "question": "What bounds the intersecting points with a provided closed path ?",
+    "answer": "the given bezier path",
+    "_category": "What"
+  },
+  {
+    "code": "@binding ffi callback 'int char* int int void* ' name ' Cryptography pem password cb' def pem password cb buf size writing userdata handle ud ffi from handle userdata handle ud called + 1if not ud password ud exception Type Error ' Passwordwasnotgivenbutprivatekeyisencrypted ' return -1 elif len ud password < size pw buf ffi buffer buf size pw buf[ len ud password ] ud passwordreturn len ud password else ud exception Value Error ' Passwordslongerthan{ 0 }bytesarenotsupportedbythisbackend ' format size - 1 return 0",
+    "question": "What copied the password ?",
+    "answer": "a pem_password_cb function pointer",
+    "_category": "What"
+  },
+  {
+    "code": "def get Manipulated Paths close element Node loop prefix side Length derivation Outset Derivation element Node prefix return intercircle get Inset Loops From Vector 3 Loop loop - derivation radius",
+    "question": "What does the code get ?",
+    "answer": "outset path",
+    "_category": "What"
+  },
+  {
+    "code": "def get New Mouse Tool return Zoom Out",
+    "question": "What does the code get ?",
+    "answer": "a new mouse tool",
+    "_category": "What"
+  },
+  {
+    "code": "def get staff lock from xblock source find staff lock source xblock return xblock type and display name source if source else None",
+    "question": "What sets the xblocks release date ?",
+    "answer": "the section or subsection",
+    "_category": "What"
+  },
+  {
+    "code": "def find actions namespace action prefix actions {}for key value in namespace iteritems if key startswith action prefix actions[key[len action prefix ]] analyse action value return actions",
+    "question": "What does the code find ?",
+    "answer": "all the actions in the namespace",
+    "_category": "What"
+  },
+  {
+    "code": "def add Bottom Loop delta Z loops bottom Loop loops[ 0 ]bottom Addition []bottom Z euclidean get Bottom Path bottom Loop + delta Z for point in bottom Loop bottom Addition append Vector 3 Index len bottom Addition point x point y bottom Z loops insert 0 bottom Addition number Of Vertexes 0for loop in loops for point in loop point index number Of Vertexesnumber Of Vertexes + 1",
+    "question": "What does the code add to loops ?",
+    "answer": "bottom loop",
+    "_category": "What"
+  },
+  {
+    "code": "def nan rows *arrs if len arrs 1 arrs + [[ False]] def nan row maybe two inputs x y x is boolean array hasattr x 'dtype' and x dtype bool and x return np logical or asarray 2d null rows x x is boolean array asarray 2d null rows y return reduce nan row maybe two inputs arrs squeeze",
+    "question": "What are nans where ?",
+    "answer": "any of the rows in any of the _ 2d _ arrays in arrs",
+    "_category": "What"
+  },
+  {
+    "code": "def find control points c1 x c1 y mmx mmy c2 x c2 y cmx 0 5 * 4 * mmx - c1 x + c2 x cmy 0 5 * 4 * mmy - c1 y + c2 y return [ c1 x c1 y cmx cmy c2 x c2 y ]",
+    "question": "What does the code find ?",
+    "answer": "control points of the bezier line throught c1",
+    "_category": "What"
+  },
+  {
+    "code": "@core helperdef render datetime datetime date format None with hours False datetime datestamp to datetime datetime if not datetime return ''if date format return datetime strftime date format return formatters localised nice date datetime show date True with hours with hours",
+    "question": "What does the code render as a localised date or in the requested format ?",
+    "answer": "a datetime object or timestamp string",
+    "_category": "What"
+  },
+  {
+    "code": "def list args request arg return [v for v in request GET getall arg if v]",
+    "question": "What does the code extract from request ?",
+    "answer": "the list of arg",
+    "_category": "What"
+  },
+  {
+    "code": "def calc factlist nn if nn > len Factlist for ii in range len Factlist int nn + 1 Factlist append Factlist[ ii - 1 ] * ii return Factlist[ int nn + 1 ]",
+    "question": "What accelerates future calculations of the various coefficients massively ?",
+    "answer": "function",
+    "_category": "What"
+  },
+  {
+    "code": "def process mistral config config path assert config path startswith '/tmp' if not os path isfile config path returnconfig Config Parser config read config path for section options in MISTRAL CONF OPTIONS TO REMOVE items for option in options if config has option section option config set section option REMOVED VALUE NAME with open config path 'w' as fp config write fp",
+    "question": "What does the code remove from the mistral config ?",
+    "answer": "sensitive data",
+    "_category": "What"
+  },
+  {
+    "code": "def submit pyspark job dataproc project cluster name bucket name filename job details {'project Id' project 'job' {'placement' {'cluster Name' cluster name} 'pyspark Job' {'main Python File Uri' 'gs //{}/{}' format bucket name filename }}}result dataproc projects regions jobs submit project Id project region REGION body job details execute job id result['reference']['job Id']print ' Submittedjob ID{}' format job id return job id",
+    "question": "What does the code submit to the cluster ?",
+    "answer": "the pyspark job",
+    "_category": "What"
+  },
+  {
+    "code": "def collect dynamic libs package destdir None if not isinstance package string types raise Value Errorlogger debug ' Collectingdynamiclibrariesfor%s' % package pkg base pkg dir get package paths package dylibs []for dirpath in os walk pkg dir for pattern in PY DYLIB PATTERNS files glob glob os path join dirpath pattern for source in files if destdir dest destdirelse dest remove prefix dirpath os path dirname pkg base + os sep logger debug '%s %s' % source dest dylibs append source dest return dylibs",
+    "question": "What produces a list of of dynamic library files which reside in package ?",
+    "answer": "this routine",
+    "_category": "What"
+  },
+  {
+    "code": "def file upload quota broken request response file upload echo request request upload handlers insert 0 Quota Upload Handler return response",
+    "question": "What do you read ?",
+    "answer": "files",
+    "_category": "What"
+  },
+  {
+    "code": "def get xml text element mini dom False text ''if mini dom node elementfor child in node child Nodes if child node Type in Node CDATA SECTION NODE Node TEXT NODE text + child dataelif element is not None for child in [element] + element findall ' //*' if child text text + child textreturn text strip",
+    "question": "What does the code get inside a xml element element : a xml element either created with elementtree ?",
+    "answer": "all text",
+    "_category": "What"
+  },
+  {
+    "code": "def identify data data fmt width height identify data return width height fmt",
+    "question": "What does the code identify in data ?",
+    "answer": "the image",
+    "_category": "What"
+  },
+  {
+    "code": "def get keywords git refnames '$ Format %d$'git full '$ Format %H$'keywords {'refnames' git refnames 'full' git full}return keywords",
+    "question": "What does the code get ?",
+    "answer": "the keywords needed to look up the version information",
+    "_category": "What"
+  },
+  {
+    "code": "def get api key url url make url api key url try return json loads urlopen url read except Value Error as e print 'UR Ldidnotreturn JSO Ndata %s' % e sys exit 1",
+    "question": "What does the code do ?",
+    "answer": "the actual get",
+    "_category": "What"
+  },
+  {
+    "code": "def b64 encode value *args **kwargs return base 64 b64 encode encode value *args **kwargs",
+    "question": "What does the code serialize to json ?",
+    "answer": "a value",
+    "_category": "What"
+  },
+  {
+    "code": "def interlink translated content generator inspector Generator Inspector generator for content in inspector all contents interlink translations content",
+    "question": "What may contain translated content ?",
+    "answer": "generators",
+    "_category": "What"
+  },
+  {
+    "code": "def tag image repository tag None force False client get client status base status copy try dimage get image infos image [' Id']ret client tag dimage repository tag tag force force except Exception invalid status out traceback format exc comment ' Canttagimage{ 0 }{ 1 }{ 2 }' format image repository tag and ' ' + tag or '' strip return statusif ret valid status id image comment ' Imagewastagged {0 }{ 1 }' format repository tag and ' ' + tag or '' strip else invalid status return status",
+    "question": "What tags into a repository image name of image repository name of repository tag tag to apply force force apply tag ?",
+    "answer": "an image",
+    "_category": "What"
+  },
+  {
+    "code": "@pytest mark parametrize 'data' 'a' 'b' 'c' 'd' 'c' 'd' 'a' 'b' 'a' 'b' 'c' 'd' 'e' 'f' def test data argument accepts tuples data p Prepared Request p prepare method 'GET' url 'http //www example com' data data hooks default hooks assert p body urlencode data",
+    "question": "What does the code ensure ?",
+    "answer": "that the data argument will accept tuples of strings and properly encode them",
+    "_category": "What"
+  },
+  {
+    "code": "def test nested basic call coroutine @hug call @asyncio coroutinedef hello world return asyncio async nested hello world @hug local @asyncio coroutinedef nested hello world return ' Hello World 'assert loop run until complete hello world ' Hello World '",
+    "question": "What do apis use ?",
+    "answer": "async",
+    "_category": "What"
+  },
+  {
+    "code": "def get package info module package env None if env opt dirs [ '%s/bin' % env ]else opt dirs []python bin module get bin path 'python' False opt dirs if python bin is None formatted dep Noneelse rc out err module run command [python bin '-c' SPECIAL PACKAGE CHECKERS[package]] if rc formatted dep Noneelse formatted dep '%s %s' % package out strip return formatted dep",
+    "question": "What do not show in pip freeze pip ?",
+    "answer": "special packages",
+    "_category": "What"
+  },
+  {
+    "code": "def sentinel get master ip master host None port None password None server sconnect host port password ret server sentinel get master addr by name master return dict list zip 'master host' 'master port' ret",
+    "question": "What does the code get ?",
+    "answer": "ip for sentinel master",
+    "_category": "What"
+  },
+  {
+    "code": "def get vertical bar pos size vertical Color Bar Visual pos pos size size label str 'iterationstoescape' cmap colormap orientation 'left' vertical label font size 15 vertical label color 'white'vertical clim 0 MAX ITERATIONS vertical ticks[ 0 ] font size 10 vertical ticks[ 1 ] font size 10 vertical ticks[ 0 ] color 'white'vertical ticks[ 1 ] color 'white'vertical border width 1vertical border color Color '#ababab' return vertical",
+    "question": "What returns a vispy ?",
+    "answer": "the mandlebrot set",
+    "_category": "What"
+  },
+  {
+    "code": "def installed packages image None return get components ' Package Identity' ' Packages' ' Installed'",
+    "question": "What windows offline ?",
+    "answer": "image",
+    "_category": "What"
+  },
+  {
+    "code": "def floating ip associate name kwargs call None if call 'action' raise Salt Cloud System Exit ' Thefloating ip associateactionmustbecalledwith-aof--action ' if 'floating ip' not in kwargs log error 'floating ipisrequired' return Falseconn get conn conn floating ip associate name kwargs['floating ip'] return list nodes [name]",
+    "question": "What does the code associate to a server ?",
+    "answer": "a floating ip address",
+    "_category": "What"
+  },
+  {
+    "code": "def has reached plugin limit placeholder plugin type language template None limits get placeholder conf 'limits' placeholder slot template if limits global limit limits get 'global' type limit limits get plugin type count placeholder get plugins language language count if global limit and count > global limit raise Plugin Limit Reached ' Thisplaceholderalreadyhasthemaximumnumberofplugins %s ' % count elif type limit type count placeholder get plugins language language filter plugin type plugin type count if type count > type limit plugin name force text plugin pool get plugin plugin type name raise Plugin Limit Reached ' Thisplaceholderalreadyhasthemaximumnumber % limit s ofallowed% plugin name splugins ' % {'limit' type limit 'plugin name' plugin name} return False",
+    "question": "What has reached its global plugin limit ?",
+    "answer": "placeholder",
+    "_category": "What"
+  },
+  {
+    "code": "@memoize iddef T Table Model metadata None from sqlalchemy import Meta Data@add metaclass Complex Model Meta class Table Model T Table Model Base class Attributes Complex Model Base Attributes sqla metadata metadata or Meta Data return Table Model",
+    "question": "What does a tablemodel template generate ?",
+    "answer": "a new tablemodel class",
+    "_category": "What"
+  },
+  {
+    "code": "def mkdir dir path return os system 'mkdir-p' + dir path",
+    "question": "What does the code create ?",
+    "answer": "a directory",
+    "_category": "What"
+  },
+  {
+    "code": "def original Text For expr as String True loc Marker Empty set Parse Action lambda s loc t loc endloc Marker loc Marker copy endloc Marker call Preparse Falsematch Expr loc Marker ' original start' + expr + endloc Marker ' original end' if as String extract Text lambda s l t s[t original start t original end] else def extract Text s l t del t[ ]t insert 0 s[t original start t original end] del t[' original start']del t[' original end']match Expr set Parse Action extract Text return match Expr",
+    "question": "What returns the original ?",
+    "answer": "helper",
+    "_category": "What"
+  },
+  {
+    "code": "def random population genome alphabet genome size num organisms fitness calculator all orgs []letter rand random Random if isinstance genome alphabet letters[ 0 ] str if sys version info[ 0 ] 3 alphabet type 'u'else alphabet type 'c'elif isinstance genome alphabet letters[ 0 ] int alphabet type 'i'elif isinstance genome alphabet letters[ 0 ] float alphabet type 'd'else raise Value Error ' Alphabettypeisunsupported %s' % genome alphabet letters for org num in range num organisms new genome Mutable Seq array array alphabet type genome alphabet for gene num in range genome size new gene letter rand choice genome alphabet letters new genome append new gene all orgs append Organism new genome fitness calculator return all orgs",
+    "question": "What does the code generate ?",
+    "answer": "a population of individuals with randomly set genomes",
+    "_category": "What"
+  },
+  {
+    "code": "def check explicit underscore import logical line filename for file in UNDERSCORE IMPORT FILES if file in filename returnif underscore import check match logical line or underscore import check multi match logical line or custom underscore check match logical line UNDERSCORE IMPORT FILES append filename elif translated log match logical line or string translation match logical line yield 0 'N 323 Founduseof withoutexplicitimportof '",
+    "question": "What are using the _ ( ) function to translate logs ?",
+    "answer": "any files",
+    "_category": "What"
+  },
+  {
+    "code": "def create role name description None if name in System Role get valid values raise Value Error '\"%s\"rolenameisblacklisted' % name role db Role DB name name description description role db Role add or update role db return role db",
+    "question": "What does the code create ?",
+    "answer": "a new role",
+    "_category": "What"
+  },
+  {
+    "code": "def unmasked index ranges mask compressed True mask mask reshape mask size m np concatenate 1 mask 1 indices np arange len mask + 1 mdif m[ 1 ] - m[ -1 ] i0 np compress mdif -1 indices i1 np compress mdif 1 indices assert len i0 len i1 if len i1 0 return Noneif not compressed return np concatenate i0 [ np newaxis] i1 [ np newaxis] axis 1 seglengths i1 - i0 breakpoints np cumsum seglengths ic 0 np concatenate 0 breakpoints[ -1 ] ic 1 breakpointsreturn np concatenate ic 0 [ np newaxis] ic 1 [ np newaxis] axis 1",
+    "question": "What does the code find ?",
+    "answer": "index ranges where * mask * is * false *",
+    "_category": "What"
+  },
+  {
+    "code": "def knownfailureif fail condition msg None known exception class None if is called from pytest import pytestif fail condition u'indeterminate' fail condition strict True False else fail condition strict bool fail condition True return pytest mark xfail condition fail condition reason msg raises known exception class strict strict else from nose decorators import knownfailureifreturn knownfailureif fail condition msg known exception class",
+    "question": "What does the code assume if * fail_condition * is true ?",
+    "answer": "a will fail",
+    "_category": "What"
+  },
+  {
+    "code": "def main with open ' /show version txt' as show ver file show ver show ver file read print obtain os version show ver",
+    "question": "What does the code obtain ?",
+    "answer": "the os version from the show version output print output to stdout",
+    "_category": "What"
+  },
+  {
+    "code": "@app route '/<username>/follow' def follow user username if not g user abort 401 whom id get user id username if whom id is None abort 404 db get db db execute 'insertintofollower who id whom id values ? ? ' [session['user id'] whom id] db commit flash ' Youarenowfollowing\"%s\"' % username return redirect url for 'user timeline' username username",
+    "question": "What does the code add as follower of the given user ?",
+    "answer": "the current user",
+    "_category": "What"
+  },
+  {
+    "code": "def conn 2 neo bulk rec query cache conn 2 neo query cachelinkattrs 'proto' accumulators {}if rec['proto'] 'icmp' rec['type'] rec['code'] rec pop 'id orig p' rec pop 'id resp p' accumulators {'codes' '{code}' None }linkattrs linkattrs + 'type' elif 'id orig p' in rec and 'id resp p' in rec rec['sport'] rec['dport'] rec pop 'id orig p' rec pop 'id resp p' accumulators {'sports' '{sport}' 5 }linkattrs linkattrs + 'dport' counters {'cspkts' '{orig pkts}' 'csbytes' '{orig ip bytes}' 'scpkts' '{resp pkts}' 'scbytes' '{resp ip bytes}'}if linkattrs not in query cache query cache[linkattrs] db flow add flow [' Flow'] linkattrs counters counters accumulators accumulators bulk append query cache[linkattrs] rec",
+    "question": "What do a statement insert from a bro log ?",
+    "answer": "a conn flow",
+    "_category": "What"
+  },
+  {
+    "code": "def manage accessed wrapped def accessed session *arg **kw session accessed now int time time if session reissue time is not None if now - session renewed > session reissue time session changed return wrapped session *arg **kw accessed doc wrapped doc return accessed",
+    "question": "What does decorator cause ?",
+    "answer": "a cookie to be renewed when an accessor method is called",
+    "_category": "What"
+  },
+  {
+    "code": "def partition is dev return ceph cfg partition is dev",
+    "question": "What does the code check ?",
+    "answer": "whether a given device path is a partition or a full disk",
+    "_category": "What"
+  },
+  {
+    "code": "def get migration data try from django contrib auth import get user modelexcept Import Error from django contrib auth models import Userelse User get user model user orm label '%s %s' % User meta app label User meta object name user model label '%s %s' % User meta app label User meta module name return User user orm label user model label",
+    "question": "What see this blog post for inspiration URL URL ?",
+    "answer": "support for django custom user models",
+    "_category": "What"
+  },
+  {
+    "code": "def smart urlquote url def unquote quote segment segment unquote segment segment quote segment safe RFC 3986 SUBDELIMS + RFC 3986 GENDELIMS + '~' return force text segment try scheme netloc path query fragment urlsplit url except Value Error return unquote quote url try netloc netloc encode 'idna' decode 'ascii' except Unicode Error return unquote quote url if query query parts [ unquote q[ 0 ] unquote q[ 1 ] for q in parse qsl query keep blank values True ]query urlencode query parts path unquote quote path fragment unquote quote fragment return urlunsplit scheme netloc path query fragment",
+    "question": "What does the code quote if it is nt already quoted ?",
+    "answer": "a url",
+    "_category": "What"
+  },
+  {
+    "code": "def machine create hostname machine group None owner None try machine Machine objects get hostname exact hostname except Machine Does Not Exist machine Machine objects create hostname hostname if machine group is not None machine machine group machine groupif owner is not None machine owner ownerreturn machine",
+    "question": "When does it exist ?",
+    "answer": "already",
+    "_category": "When"
+  },
+  {
+    "code": "def at server start pass",
+    "question": "When is this called ?",
+    "answer": "every time the server starts up",
+    "_category": "When"
+  },
+  {
+    "code": "def strptime date d {'year' date[ 0 4] 'month' date[ 5 7] 'day' date[ 8 10 ] 'hour' date[ 11 13 ] 'minute' date[ 14 16 ] 'second' date[ 17 ]}d dict k int v for k v in d iteritems return datetime **d",
+    "question": "When does datetime object return ?",
+    "answer": "from the given date",
+    "_category": "When"
+  },
+  {
+    "code": "def toggle device partition flag validate device device try int partition except Exception raise Command Execution Error ' Invalidpartitionnumberpassedtopartition toggle' if flag not in set ['bios grub' 'legacy boot' 'boot' 'lba' 'root' 'swap' 'hidden' 'raid' 'LVM' 'PALO' 'PREP' 'DIAG'] raise Command Execution Error ' Invalidflagpassedtopartition toggle' cmd 'parted-m-s{ 0 }toggle{ 1 }{ 2 }' format device partition flag out salt ['cmd run'] cmd splitlines return out",
+    "question": "When do the state of < flag > toggle ?",
+    "answer": "on < partition >",
+    "_category": "When"
+  },
+  {
+    "code": "def get cli body ssh command response module if 'xml' in response[ 0 ] body []elif 'showrun' in command body responseelse try response response[ 0 ] replace command + '\\n\\n' '' strip body [json loads response ]except Value Error module fail json msg ' Commanddoesnotsupport JSO Noutput' command command return body",
+    "question": "When does the code get response ?",
+    "answer": "for when transport = cli",
+    "_category": "When"
+  },
+  {
+    "code": "def fetch dhcp options for vpc vpc conn vpc id vpcs vpc conn get all vpcs vpc ids [vpc id] if len vpcs 1 or vpcs[ 0 ] dhcp options id 'default' return Nonedhcp options vpc conn get all dhcp options dhcp options ids [vpcs[ 0 ] dhcp options id] if len dhcp options 1 return Nonereturn dhcp options[ 0 ]",
+    "question": "When did the dhcp options object associate with the requested vpc i d ?",
+    "answer": "currently",
+    "_category": "When"
+  },
+  {
+    "code": "def calculate base branch version path if not is release version or is weekly release version or is pre release version raise Not A Release repo Repo path path search parent directories True existing tags [tag for tag in repo tags if tag name version ]if existing tags raise Tag Exists base branch name 'master'repo git checkout base branch name return branch for branch in repo branches if branch name base branch name next",
+    "question": "When have which pre - releases preceeded this ?",
+    "answer": "sometimes",
+    "_category": "When"
+  },
+  {
+    "code": "def test config ip magic 'config'",
+    "question": "When is configurable init moved into magics ?",
+    "answer": "too early",
+    "_category": "When"
+  },
+  {
+    "code": "def add s i if i > 1 return 's'else return ''",
+    "question": "When do an \" return ?",
+    "answer": "when i > 1",
+    "_category": "When"
+  },
+  {
+    "code": "@with open mode 'r' @with sizes 'small' 'medium' 'large' def read whole file f f seek 0 while f read pass",
+    "question": "When do whole contents read ?",
+    "answer": "at once",
+    "_category": "When"
+  },
+  {
+    "code": "def reset ignored cmd ['softwareupdate' '--reset-ignored']salt utils mac utils execute return success cmd return list ignored []",
+    "question": "When are the ignored updates not ignored ?",
+    "answer": "anymore",
+    "_category": "When"
+  },
+  {
+    "code": "def restore caches old global FS CACHE MR CACHE FS CACHE MR CACHE old",
+    "question": "When do clear_caches call ?",
+    "answer": "previous",
+    "_category": "When"
+  },
+  {
+    "code": "def test ada fit invalid ratio ratio 1 0 / 10000 0 ada ADASYN ratio ratio random state RND SEED assert raises Runtime Error ada fit X Y",
+    "question": "When is an error raised ?",
+    "answer": "when the balancing ratio to fit is smaller than the one of the data",
+    "_category": "When"
+  },
+  {
+    "code": "def expln x def f val if val < 0 return exp val else return log val + 1 0 + 1 try result array list map f x except Type Error result array f x return result",
+    "question": "When are the values of the array are positive ?",
+    "answer": "always",
+    "_category": "When"
+  },
+  {
+    "code": "def millis to datetime millis opts diff millis % 1000 + 1000 % 1000 seconds millis - diff / 1000 micros diff * 1000 if opts tz aware dt EPOCH AWARE + datetime timedelta seconds seconds microseconds micros if opts tzinfo dt dt astimezone opts tzinfo return dtelse return EPOCH NAIVE + datetime timedelta seconds seconds microseconds micros",
+    "question": "When do milliseconds convert to datetime ?",
+    "answer": "since epoch utc",
+    "_category": "When"
+  },
+  {
+    "code": "def describe api resource rest Api Id path region None key None keyid None profile None r describe api resources rest Api Id region region key key keyid keyid profile profile resources r get 'resources' if resources is None return rfor resource in resources if resource['path'] path return {'resource' resource}return {'resource' None}",
+    "question": "When d the code given ?",
+    "answer": "i d",
+    "_category": "When"
+  },
+  {
+    "code": "def set selectors facts deployment type facts['common']['deployment type']if deployment type 'online' selector 'type infra'else selector 'region infra'if 'hosted' not in facts facts['hosted'] {}if 'router' not in facts['hosted'] facts['hosted']['router'] {}if 'selector' not in facts['hosted']['router'] or facts['hosted']['router']['selector'] in [ None ' None'] facts['hosted']['router']['selector'] selectorif 'registry' not in facts['hosted'] facts['hosted']['registry'] {}if 'selector' not in facts['hosted']['registry'] or facts['hosted']['registry']['selector'] in [ None ' None'] facts['hosted']['registry']['selector'] selectorif 'metrics' not in facts['hosted'] facts['hosted']['metrics'] {}if 'selector' not in facts['hosted']['metrics'] or facts['hosted']['metrics']['selector'] in [ None ' None'] facts['hosted']['metrics']['selector'] Noneif 'logging' not in facts['hosted'] facts['hosted']['logging'] {}if 'selector' not in facts['hosted']['logging'] or facts['hosted']['logging']['selector'] in [ None ' None'] facts['hosted']['logging']['selector'] Nonereturn facts",
+    "question": "When were they not were present ?",
+    "answer": "already",
+    "_category": "When"
+  },
+  {
+    "code": "def env *vars **kwargs for v in vars value os environ get v None if value return valuereturn kwargs get 'default' ''",
+    "question": "When did many env vars define ?",
+    "answer": "first",
+    "_category": "When"
+  },
+  {
+    "code": "def expires delta try datetimeexcept Name Error raise Exception 'requires Python 2 3orlater'if isinstance delta int long delta datetime timedelta seconds delta date obj datetime datetime utcnow + delta header ' Expires' date obj strftime '%a %d%b%Y%TGMT'",
+    "question": "When does an expires header for delta output ?",
+    "answer": "from now",
+    "_category": "When"
+  },
+  {
+    "code": "def unicode or json validator value context try if value is None return valuev json validator value context if not isinstance v dict return unicode value else return vexcept df Invalid return unicode value",
+    "question": "When do a parsed json object return ?",
+    "answer": "when applicable",
+    "_category": "When"
+  },
+  {
+    "code": "def safezip *args Nx len args[ 0 ] for i arg in enumerate args[ 1 ] if len arg Nx raise Value Error safezip msg % Nx i + 1 len arg return zip *args",
+    "question": "When does the code make sure * args * are equal len ?",
+    "answer": "before zipping",
+    "_category": "When"
+  },
+  {
+    "code": "def test ada sample wt fit ada ADASYN random state RND SEED assert raises Runtime Error ada sample X Y",
+    "question": "When is an error raised ?",
+    "answer": "when sample is called before fitting",
+    "_category": "When"
+  },
+  {
+    "code": "def run ninja signal signal signal SIGINT signal SIG DFL if not settings IS WINDOWS and not settings IS MAC OS try import ctypeslibc ctypes CDLL 'libc so 6' procname 'ninja-ide'libc prctl 15 '%s\\x 00 ' % procname 0 0 0 except print \" Theprocesscouldn'tberenamed'\" filenames projects path extra plugins linenos log level log file cliparser parse resources create home dir structure from ninja ide tools logger import Ninja Logger Ninja Logger argparse log level log file settings load settings app Q Application sys argv from ninja ide import guigui start ide app filenames projects path extra plugins linenos sys exit app exec",
+    "question": "When does the execution args obtain ?",
+    "answer": "first",
+    "_category": "When"
+  },
+  {
+    "code": "def get notifications user dict since notifications []for function in notifications functions notifications extend function user dict since return notifications",
+    "question": "When do any email notifications for the given user return ?",
+    "answer": "since since",
+    "_category": "When"
+  },
+  {
+    "code": "def create txn asset dt price amount if not isinstance asset Asset raise Value Error 'passanassettocreate txn' mock order Order dt asset amount id None return create transaction mock order dt price amount",
+    "question": "When did a fake transaction process ?",
+    "answer": "prior to the execution of a given trade event",
+    "_category": "When"
+  },
+  {
+    "code": "def cache page *args **kwargs if len args 1 or callable args[ 0 ] raise Type Error 'cache pagehasasinglemandatorypositionalargument timeout' cache timeout args[ 0 ]cache alias kwargs pop 'cache' None key prefix kwargs pop 'key prefix' None if kwargs raise Type Error 'cache pagehastwooptionalkeywordarguments cacheandkey prefix' return decorator from middleware with args Cache Middleware cache timeout cache timeout cache alias cache alias key prefix key prefix",
+    "question": "When does the page nt be in the cache ?",
+    "answer": "yet",
+    "_category": "When"
+  },
+  {
+    "code": "def req job run r **attr if r interactive if r id current s3 task async 'req add from template' [r id] {'user id' current auth user id} current session confirmation current T ' Requestadded' r component id Noneredirect r url method ''",
+    "question": "When do a job run ?",
+    "answer": "now",
+    "_category": "When"
+  },
+  {
+    "code": "def set monitor timeout timeout power 'ac' scheme None return set powercfg value scheme 'SUB VIDEO' 'VIDEOIDLE' power timeout",
+    "question": "When did the code set the monitor timeout for the given power scheme ?",
+    "answer": "in minutes",
+    "_category": "When"
+  },
+  {
+    "code": "def rebuild registry xml parent data sub element XML Sub Element xml parent 'com sonyericsson rebuild Rebuild Settings' sub element set 'plugin' 'rebuild' mapping [ 'auto-rebuild' 'auto Rebuild' False 'rebuild-disabled' 'rebuild Disabled' False ]helpers convert mapping to xml sub element data mapping fail required True",
+    "question": "When do the user enter the parameters ?",
+    "answer": "again",
+    "_category": "When"
+  },
+  {
+    "code": "def show Predictions for k in range 6 tm reset print '---' + 'ABCDXY'[k] + '---' tm compute set seq T[k][ ] nonzero [0 ] tolist learn False active Columns Indices [tm column For Cell i for i in tm get Active Cells ]predicted Column Indices [tm column For Cell i for i in tm get Predictive Cells ]current Columns [ 1 if i in active Columns Indices else 0 for i in range tm number Of Columns ]predicted Columns [ 1 if i in predicted Column Indices else 0 for i in range tm number Of Columns ]print ' Activecols ' + str np nonzero current Columns [0 ] print ' Predictedcols ' + str np nonzero predicted Columns [0 ] print ''",
+    "question": "When does predictions of the tm show ?",
+    "answer": "when presented with the characters a",
+    "_category": "When"
+  },
+  {
+    "code": "def report invalid cookie data logging error 'invalid Cookie %r' data",
+    "question": "When does this module log a bad cookie how ?",
+    "answer": "when exception suppressed",
+    "_category": "When"
+  },
+  {
+    "code": "def cb Server Greeting proto username password tp Trivial Prompter stdio Standard IO tp proto prompt tp promptproto display tp displayreturn proto authenticate password add Callback cb Authentication proto add Errback eb Authentication proto username password",
+    "question": "When did initial callback invoke ?",
+    "answer": "after the server sends us its greet message",
+    "_category": "When"
+  },
+  {
+    "code": "@require context@pick context manager readerdef vol get usage by time context begin return model query context models Volume Usage read deleted 'yes' filter or models Volume Usage tot last refreshed null models Volume Usage tot last refreshed > begin models Volume Usage curr last refreshed null models Volume Usage curr last refreshed > begin all",
+    "question": "When have return volumes usage been updated ?",
+    "answer": "after a specified time",
+    "_category": "When"
+  },
+  {
+    "code": "def test dae yaml limited epoch train os path join pylearn 2 path [0 ] 'scripts/autoencoder example/dae yaml'",
+    "question": "When do a denoising autoencoder train code ?",
+    "answer": "for a single epoch",
+    "_category": "When"
+  },
+  {
+    "code": "def get duplicate emails return get user model objects hide meta values 'email' annotate Count 'email' filter email count gt 1 values list 'email' flat True",
+    "question": "When do emails occur in user accounts ?",
+    "answer": "more than once",
+    "_category": "When"
+  },
+  {
+    "code": "@receiver thread voted @receiver thread created @receiver comment voted @receiver comment created def post create vote handler sender **kwargs handle activity kwargs['user'] kwargs['post']",
+    "question": "When does the code update the users last activity date ?",
+    "answer": "upon creating or voting for a post",
+    "_category": "When"
+  },
+  {
+    "code": "@cachedef languages response wiki request {u'meta' u'siteinfo' u'siprop' u'languages'} languages response[u'query'][u'languages']return {lang[u'code'] lang[u'*'] for lang in languages}",
+    "question": "When did language prefixes support ?",
+    "answer": "currently",
+    "_category": "When"
+  },
+  {
+    "code": "def handle identical cert request config lineage if not lineage ensure deployed return 'reinstall' lineage if renewal should renew config lineage return 'renew' lineage if config reinstall return 'reinstall' lineage question \" Youhaveanexistingcertificatethathasexactlythesamedomainsorcertificatenameyourequestedandisn'tclosetoexpiry {br} ref {0 } {br}{br} Whatwouldyouliketodo?\" format lineage configfile filename br os linesep if config verb 'run' keep opt ' Attempttoreinstallthisexistingcertificate'elif config verb 'certonly' keep opt ' Keeptheexistingcertificatefornow'choices [keep opt ' Renew&replacethecert limit~ 5 per 7 days ']display zope component get Utility interfaces I Display response display menu question choices 'OK' ' Cancel' default 0 force interactive True if response[ 0 ] display util CANCEL raise errors Error ' Userchosetocanceltheoperationandmayreinvoketheclient ' elif response[ 1 ] 0 return 'reinstall' lineage elif response[ 1 ] 1 return 'renew' lineage else assert False ' Thisisimpossible'",
+    "question": "When did one obtain ?",
+    "answer": "previously",
+    "_category": "When"
+  },
+  {
+    "code": "@dual decoratordef empty arg shortcircuit return code u'[]' position 1 @decoratordef wrapper function *args **kw if len args[position] 0 return ast literal eval return code else return function *args **kw return wrapper",
+    "question": "When does the code return something if the length of a positional arg is 0 ?",
+    "answer": "immediately",
+    "_category": "When"
+  },
+  {
+    "code": "def jsonrpc client call url method *args **kwargs urllib kwargs pop ' urllib' urllib if args and kwargs raise Value Error ' Pass*argsor**kwargsbutnotbothtojsonrpc client call' req {'jsonrpc' '2 0' 'method' method 'params' args or kwargs 'id' 1}res json loads urllib urlopen url json dumps req read if 'result' in res return res['result']elif 'error' in res er res['error']raise Json Rpc Error er['code'] er['message'] er['data'] else msg \"JSON-RP Cresponsemustcontain'result'or'error' %s\" % res raise Value Error msg",
+    "question": "When does the code execute a json - rpc call ?",
+    "answer": "on the given url",
+    "_category": "When"
+  },
+  {
+    "code": "def test ee fit invalid ratio ratio 1 0 / 10000 0 ee Easy Ensemble ratio ratio random state RND SEED assert raises Runtime Error ee fit X Y",
+    "question": "When is an error raised ?",
+    "answer": "when the balancing ratio to fit is smaller than the one of the data",
+    "_category": "When"
+  },
+  {
+    "code": "def symptom minimum password age greater than expires days min age CONF security compliance minimum password ageexpires CONF security compliance password expires daysreturn min age > expires if min age > 0 and expires > 0 else False",
+    "question": "When does the password expire ?",
+    "answer": "days",
+    "_category": "When"
+  },
+  {
+    "code": "def multicall conf context topic msg timeout None check serialize msg method msg get 'method' if not method returnargs msg get 'args' {} version msg get 'version' None try consumer CONSUMERS[topic][ 0 ]except Key Error Index Error return iter [ None] else return consumer call context version method args timeout",
+    "question": "When does a call return ?",
+    "answer": "multiple times",
+    "_category": "When"
+  },
+  {
+    "code": "def set date name date cmd 'chage-d{ 0 }{ 1 }' format date name return not salt ['cmd run'] cmd python shell False",
+    "question": "When was the password changed to days ?",
+    "answer": "the date",
+    "_category": "When"
+  },
+  {
+    "code": "def get Double After First Letter word return float word[ 1 ]",
+    "question": "When does the code get the double value of the word ?",
+    "answer": "after the first letter",
+    "_category": "When"
+  },
+  {
+    "code": "def count from 0 index collection return index",
+    "question": "When do consecutive integers start ?",
+    "answer": "at 0",
+    "_category": "When"
+  },
+  {
+    "code": "def log cef name severity env *args **kwargs c {'cef product' getattr settings 'CEF PRODUCT' 'AMO' 'cef vendor' getattr settings 'CEF VENDOR' ' Mozilla' 'cef version' getattr settings 'CEF VERSION' '0 ' 'cef device version' getattr settings 'CEF DEVICE VERSION' '0 ' 'cef file' getattr settings 'CEF FILE' 'syslog' }if isinstance env Http Request r env META copy if 'PATH INFO' in r r['PATH INFO'] env build absolute uri r['PATH INFO'] elif isinstance env dict r envelse r {}if settings USE HEKA FOR CEF return settings HEKA cef name severity r config c *args **kwargs else return log cef name severity r config c *args **kwargs",
+    "question": "When do we pass in the config dictionary ?",
+    "answer": "every time",
+    "_category": "When"
+  },
+  {
+    "code": "def install config plugins try installer plug sel choose configurator plugins config plugins 'install' except errors Plugin Selection Error as e return e message domains find domains or certname config installer le client init le client config authenticator None installer installer assert config cert path is not None le client deploy certificate domains config key path config cert path config chain path config fullchain path le client enhance config domains config chain path",
+    "question": "When did cert obtain ?",
+    "answer": "previously",
+    "_category": "When"
+  },
+  {
+    "code": "def sub matlist 1 matlist 2 K return add matlist 1 negate matlist 2 K K",
+    "question": "When do the second matrix negate ?",
+    "answer": "first",
+    "_category": "When"
+  },
+  {
+    "code": "def send email after account create form send email to form['email'] action USER REGISTER subject MAILS[USER REGISTER]['subject'] format app name get settings ['app name'] html MAILS[USER REGISTER]['message'] format email form['email']",
+    "question": "When do email send ?",
+    "answer": "after account",
+    "_category": "When"
+  },
+  {
+    "code": "def channel hop 2 mon iface global monchannel first pass args jamming daemon runningchannel Num 0if args channel with lock monchannel args channelwhile jamming daemon running if not args channel channel Num + 1if channel Num > 11 channel Num 1with lock first pass 0with lock monchannel channel Nummon iface set channel monchannel output monchannel if args channel time sleep 0 05 elif first pass 1 time sleep 1 continuedeauth monchannel",
+    "question": "When does it stay on each channel in order to populate the deauth list nicely ?",
+    "answer": "first time it runs through the channels",
+    "_category": "When"
+  },
+  {
+    "code": "def mygettext string return string",
+    "question": "When did the code use ?",
+    "answer": "when creating translationproxies",
+    "_category": "When"
+  },
+  {
+    "code": "def get cli body ssh command response module if 'xml' in response[ 0 ] body []elif '^' in response[ 0 ] or 'summary' in command body responseelse try body [json loads response[ 0 ] ]except Value Error module fail json msg ' Commanddoesnotsupport JSO Noutput' command command return body",
+    "question": "When does the code get response ?",
+    "answer": "for when transport = cli",
+    "_category": "When"
+  },
+  {
+    "code": "def No Blank Lines Before Current Token text cur token prev token cur token lineno cur token linenoif cur token is comment cur token lineno - cur token value count u'\\n' num newlines text count u'\\n' if not prev token is comment else 0 return prev token lineno + num newlines cur token lineno - 1",
+    "question": "When do no blank lines be ?",
+    "answer": "before the current token",
+    "_category": "When"
+  },
+  {
+    "code": "def get jid jid serv get serv ret None ret {}for minion data in six iteritems serv hgetall 'ret {0 }' format jid if data ret[minion] json loads data return ret",
+    "question": "When did the information return ?",
+    "answer": "when the specified job i d was executed",
+    "_category": "When"
+  },
+  {
+    "code": "def tamper payload **kwargs def process match word match group 'word' if word upper in kb keywords and word upper not in IGNORE SPACE AFFECTED KEYWORDS return match group replace word '/* 0%s' % word else return match group ret Val payloadif payload ret Val re sub ' ?< \\\\W ?P<word>[A- Za-z ]+ ? \\\\W \\\\Z ' lambda match process match ret Val ret Val ret Val replace '/* 0' '/* 0' return ret Val",
+    "question": "When does the code add versioned mysql comment ?",
+    "answer": "before each keyword requirement",
+    "_category": "When"
+  },
+  {
+    "code": "def was modified since header None mtime 0 size 0 try if header is None raise Value Errormatches re match '^ [^ ]+ length [0 - 9 ]+ ?$' header re IGNORECASE header date parsedate tz matches group 1 if header date is None raise Value Errorheader mtime mktime tz header date header len matches group 3 if header len and int header len size raise Value Errorif mtime > header mtime raise Value Errorexcept Attribute Error Value Error Overflow Error return Truereturn False",
+    "question": "When did the user download it ?",
+    "answer": "last",
+    "_category": "When"
+  },
+  {
+    "code": "def delayed fail time sleep 5 raise Value Error ' Expectedfailure '",
+    "question": "When are processes running ?",
+    "answer": "before the error is raised",
+    "_category": "When"
+  },
+  {
+    "code": "def unicode from os e if sys version info > 3 return str e try if isinstance e Exception e e args[ 0 ]if isinstance e str cls return eif isinstance e int e str e return str cls e encoding except Unicode Decode Error for encoding in fallback encodings try return str cls e encoding errors 'strict' except passreturn str cls e errors 'replace'",
+    "question": "When are the encoded ?",
+    "answer": "already",
+    "_category": "When"
+  },
+  {
+    "code": "def get db top app ctx stack topif not hasattr top 'sqlite db' top sqlite db sqlite 3 connect app config['DATABASE'] top sqlite db row factory sqlite 3 Rowreturn top sqlite db",
+    "question": "When does none be ?",
+    "answer": "yet",
+    "_category": "When"
+  },
+  {
+    "code": "def libvlc media list player play item at index p mlp i index f Cfunctions get 'libvlc media list player play item at index' None or Cfunction 'libvlc media list player play item at index' 1 1 None ctypes c int Media List Player ctypes c int return f p mlp i index",
+    "question": "Where do media list item play ?",
+    "answer": "at position index",
+    "_category": "Where"
+  },
+  {
+    "code": "def unique enumeration duplicates []for name member in enumeration members items if name member name duplicates append name member name if duplicates duplicate names ' ' join [ '%s->%s' % alias name for alias name in duplicates] raise Value Error 'duplicatenamesfoundin%r %s' % enumeration duplicate names return enumeration",
+    "question": "Where do only unique members exist ?",
+    "answer": "in an enumeration",
+    "_category": "Where"
+  },
+  {
+    "code": "def distribute not domain result []stack [ False]for token in domain negate stack pop if is leaf token if negate left operator right tokenif operator in TERM OPERATORS NEGATION result append left TERM OPERATORS NEGATION[operator] right else result append NOT OPERATOR result append token else result append token elif token NOT OPERATOR stack append not negate elif token in DOMAIN OPERATORS NEGATION result append DOMAIN OPERATORS NEGATION[token] if negate else token stack append negate stack append negate else result append token return result",
+    "question": "Where did any ! domain operators find ?",
+    "answer": "inside a normalized domain",
+    "_category": "Where"
+  },
+  {
+    "code": "def create shape flat names try shape str flat names[ -1 ] rsplit ' ' 1 except Value Error return return tuple int i + 1 for i in shape str split ' '",
+    "question": "Where do shape determine ?",
+    "answer": "from create_flat_names output",
+    "_category": "Where"
+  },
+  {
+    "code": "def manhattan distances X Y None sum over features True size threshold 500000000 0 X Y check pairwise arrays X Y if issparse X or issparse Y if not sum over features raise Type Error 'sum over features %rnotsupportedforsparsematrices' % sum over features X csr matrix X copy False Y csr matrix Y copy False D np zeros X shape[ 0 ] Y shape[ 0 ] sparse manhattan X data X indices X indptr Y data Y indices Y indptr X shape[ 1 ] D return Dif sum over features return distance cdist X Y 'cityblock' D X[ np newaxis ] - Y[np newaxis ] D np abs D D return D reshape -1 X shape[ 1 ]",
+    "question": "Where does the code compute the l1 distances between the vectors ?",
+    "answer": "in x and y",
+    "_category": "Where"
+  },
+  {
+    "code": "def get entity group version entity or key eg db get Entity Group key for entity entity or key if eg return eg versionelse return None",
+    "question": "Where do the entity group contain ?",
+    "answer": "entity_or_key",
+    "_category": "Where"
+  },
+  {
+    "code": "def slugify s max length None s ustr s if slugify lib try return slugify lib slugify s max length max length except Type Error passuni unicodedata normalize 'NFKD' s encode 'ascii' 'ignore' decode 'ascii' slug str re sub '[\\\\W ]' '' uni strip lower slug str re sub '[-\\\\s]+' '-' slug str return slug str[ max length]",
+    "question": "Where can a slug be used ?",
+    "answer": "in a url path",
+    "_category": "Where"
+  },
+  {
+    "code": "def fixed ip associate pool context network id instance uuid None host None return IMPL fixed ip associate pool context network id instance uuid host",
+    "question": "Where does the code find free ip ?",
+    "answer": "in network",
+    "_category": "Where"
+  },
+  {
+    "code": "@core helper@maintain deprecated 'h subnav named routeisdeprecatedpleaseuseh nav link\\n NOTE youwillneedtopasstheroute nameasanamedparameter' def subnav named route text named route **kwargs return nav link text named route named route **kwargs",
+    "question": "Where did a named route deprecate ?",
+    "answer": "in ckan 2",
+    "_category": "Where"
+  },
+  {
+    "code": "def make identity dict rng res {}for i in rng res[i] ireturn res",
+    "question": "Where are elements of the rng sequence mapped ?",
+    "answer": "a dictionary",
+    "_category": "Where"
+  },
+  {
+    "code": "def cwd at path def decorator func @functools wraps func def wrapper *args **kwds try oldcwd os getcwd repo root os path dirname test dir os chdir os path join repo root path return func *args **kwds finally os chdir oldcwd return wrapperreturn decorator",
+    "question": "Where do decorator run function ?",
+    "answer": "at path",
+    "_category": "Where"
+  },
+  {
+    "code": "def startup if TRAFFICLINE cmd traffic line '-U' else cmd traffic ctl 'server' 'start' log debug ' Running %s' cmd subprocess cmd return statuscmd",
+    "question": "Where do traffic server start ?",
+    "answer": "on the local node",
+    "_category": "Where"
+  },
+  {
+    "code": "def available features image None return get components ' Feature Name' ' Features' ' Disabled'",
+    "question": "Where does image window ?",
+    "answer": "offline",
+    "_category": "Where"
+  },
+  {
+    "code": "def output notebook resources None verbose False hide banner False load timeout 5000 load notebook resources verbose hide banner load timeout state output notebook",
+    "question": "Where do output generate when : func : show is called ?",
+    "answer": "in jupyter / ipython notebook cells",
+    "_category": "Where"
+  },
+  {
+    "code": "def ipaddrs return proxy ['napalm call'] 'get interfaces ip' **{}",
+    "question": "Where did ip addresses configure ?",
+    "answer": "on the device",
+    "_category": "Where"
+  },
+  {
+    "code": "def health state consul url None state None **kwargs ret {}query params {}if not consul url consul url get config if not consul url log error ' No Consul UR Lfound ' ret['message'] ' No Consul UR Lfound 'ret['res'] Falsereturn retif not state raise Salt Invocation Error ' Requiredargument\"state\"ismissing ' if 'dc' in kwargs query params['dc'] kwargs['dc']if state not in 'any' 'unknown' 'passing' 'warning' 'critical' ret['message'] ' Statemustbeany unknown passing warning orcritical 'ret['res'] Falsereturn retfunction 'health/state/{ 0 }' format state ret query consul url consul url function function query params query params return ret",
+    "question": "Where does the checks provide ?",
+    "answer": "on the path",
+    "_category": "Where"
+  },
+  {
+    "code": "def label absent name node None apiserver None ret salt ['k 8 s label absent'] name node apiserver return ret",
+    "question": "Where does the label nt exist ?",
+    "answer": "on the kube node",
+    "_category": "Where"
+  },
+  {
+    "code": "def get path salt result read docker compose path if not salt result['status'] return salt resultproject load project path if isinstance project dict salt result['return']['valid'] Falseelse salt result['return']['valid'] Truereturn salt result",
+    "question": "Where is the docker - compose file stored ?",
+    "answer": "a directory path path",
+    "_category": "Where"
+  },
+  {
+    "code": "def compute live map cfg blocks var use map var def map live map {}for offset in blocks keys live map[offset] var use map[offset]def fix point progress return tuple len v for v in live map values old point Nonenew point fix point progress while old point new point for offset in live map keys for inc blk data in cfg predecessors offset live map[inc blk] live map[offset] - var def map[inc blk] old point new pointnew point fix point progress return live map",
+    "question": "Where be variables be alive ?",
+    "answer": "at the entry of each block",
+    "_category": "Where"
+  },
+  {
+    "code": "def cls attr mock request cls attr name name None **kwargs name request fixturename if name is None else name patch patch object cls attr name name name **kwargs request addfinalizer patch stop return patch start",
+    "question": "Where is the patch reversed after pytest uses it ?",
+    "answer": "where",
+    "_category": "Where"
+  },
+  {
+    "code": "def mask email ref pepno None if ref hasattr 'refuri' and ref['refuri'] startswith 'mailto ' if ref['refuri'][ 8 ] in non masked addresses replacement ref[ 0 ]else replacement text ref astext replace '@' '&# 32 &# 97 t&# 32 ' replacement nodes raw '' replacement text format 'html' if pepno is None return replacementelse ref['refuri'] + '?subject PEP%% 20 %s' % pepno ref[ ] [replacement]return refelse return ref",
+    "question": "Where does the code mask the email address ?",
+    "answer": "in ref",
+    "_category": "Where"
+  },
+  {
+    "code": "def all classes in module module name assert sys version info > 2 7 import importlibmodule importlib import module module name objects [getattr module obj name for obj name in dir module if getattr getattr module obj name ' module ' '' module name ]classes filter lambda obj isinstance obj object and not isinstance obj types Function Type objects return classes",
+    "question": "Where did all classes define ?",
+    "answer": "in the given module",
+    "_category": "Where"
+  },
+  {
+    "code": "def find matching indices tree bin X left mask right mask left index np searchsorted tree bin X & left mask right index np searchsorted tree bin X right mask side 'right' return left index right index",
+    "question": "Where does indices find ?",
+    "answer": "in sorted array of integers",
+    "_category": "Where"
+  },
+  {
+    "code": "def topic weight d word k return p word given topic word k * p topic given document k d",
+    "question": "Where did a document and a word give the code ?",
+    "answer": "in that document",
+    "_category": "Where"
+  },
+  {
+    "code": "def get Loop Convex Added Index around last Added Index last Point segment polygon Convex Added Index len around - 1 greatest Dot Product -9 9 for added Index in xrange last Added Index + 1 len around added Point around[added Index]added Segment get Normalized added Point - last Point if abs added Segment > 0 0 dot Product get Dot Product added Segment segment if dot Product > greatest Dot Product greatest Dot Product dot Productpolygon Convex Added Index added Indexreturn polygon Convex Added Index",
+    "question": "Where does the code get polygon convex added ?",
+    "answer": "index",
+    "_category": "Where"
+  },
+  {
+    "code": "def in gae environment if SETTINGS env name is not None return SETTINGS env name in 'GAE PRODUCTION' 'GAE LOCAL' try import google appengineexcept Import Error passelse server software os environ get SERVER SOFTWARE '' if server software startswith ' Google App Engine/' SETTINGS env name 'GAE PRODUCTION'return Trueelif server software startswith ' Development/' SETTINGS env name 'GAE LOCAL'return Truereturn False",
+    "question": "Where is the code running ?",
+    "answer": "in the app engine environment",
+    "_category": "Where"
+  },
+  {
+    "code": "def test close connections print ' Runningtest close connections' s3 boto connect s3 for b in s3 get all buckets if b name startswith 'test-' for key in b get all keys key delete b delete bucket s3 create bucket 'test-%d' % int time time names [str uuid uuid 4 for in range 30 ]threads [spawn put object bucket name for name in names]for t in threads t join threads [spawn get object bucket name for name in names]for t in threads t join",
+    "question": "Where are connections returned to the connection pool before the caller reads the response ?",
+    "answer": "where",
+    "_category": "Where"
+  },
+  {
+    "code": "def whitespace around comma logical line line logical linefor m in WHITESPACE AFTER COMMA REGEX finditer line found m start + 1 if ' DCTB ' in m group yield found \"E 242 tabafter'%s'\" % m group [0 ] else yield found \"E 241 multiplespacesafter'%s'\" % m group [0 ]",
+    "question": "Where do extraneous whitespace avoid ?",
+    "answer": "in the following situations : - more than one space around an assignment operator to align it with another",
+    "_category": "Where"
+  },
+  {
+    "code": "def get session log return get log for pid static PID",
+    "question": "Where does the logs for the current active session fetch ?",
+    "answer": "from the debug log file",
+    "_category": "Where"
+  },
+  {
+    "code": "def install run Loop None runner None reactor CF Reactor run Loop run Loop runner runner from twisted internet main import install Reactorinstall Reactor reactor return reactor",
+    "question": "Where be the twisted mainloop run ?",
+    "answer": "inside cfrunloop",
+    "_category": "Where"
+  },
+  {
+    "code": "def queryset iterator queryset chunksize 1000 getfunc getattr pk 0try ' Inthecaseofanemptylist return'last pk getfunc queryset order by '-pk' [0 ] 'pk' except Index Error returnqueryset queryset order by 'pk' while pk < last pk for row in queryset filter pk gt pk [ chunksize] iterator pk getfunc row 'pk' yield row gc collect",
+    "question": "Where would django load all rows normally ?",
+    "answer": "in its memory",
+    "_category": "Where"
+  },
+  {
+    "code": "def get Avatars path os path expanduser '~/ Library/ Application Support/ Skype/' + get User Name + '/main db' with contextlib closing sqlite 3 connect path cursor as db for av in db execute 'SELEC Tskypename avatar image FROM Contacts WHER Etype 1AN Dis permanent 1' if av[ 1 ] is not None with open 'avatars/' + av[ 0 ] + ' jpeg' 'wr' as f f write str av[ 1 ] [1 ]",
+    "question": "Where does the code store them ?",
+    "answer": "in the alfred extension directory",
+    "_category": "Where"
+  },
+  {
+    "code": "def async test method @functools wraps method def Wrapper self method self self wait return Wrapper",
+    "question": "Where do tests run ?",
+    "answer": "in test cases derived from tornado",
+    "_category": "Where"
+  },
+  {
+    "code": "def get text from files vision input filenames text analyzer texts vision detect text input filenames if texts for filename text in texts items extract descriptions filename text text analyzer",
+    "question": "Where does the code call the vision api ?",
+    "answer": "on a file",
+    "_category": "Where"
+  },
+  {
+    "code": "def offset image xoffset yoffset None if yoffset is None yoffset xoffsetimage load return image new image im offset xoffset yoffset",
+    "question": "Where has data been offset by the given distances ?",
+    "answer": "the image",
+    "_category": "Where"
+  },
+  {
+    "code": "def get hg revision repopath try assert osp isdir osp join repopath ' hg' proc programs run program 'hg' ['id' '-nib' repopath] output err proc communicate return tuple output decode strip split None 2 except subprocess Called Process Error Assertion Error Attribute Error return None None None",
+    "question": "Where did the repository locate ?",
+    "answer": "at repopath result",
+    "_category": "Where"
+  },
+  {
+    "code": "def Proxy f def Wrapped self *args return getattr self f *args return Wrapped",
+    "question": "Where do a helper create a proxy method ?",
+    "answer": "in a class",
+    "_category": "Where"
+  },
+  {
+    "code": "def python 2 unicode compatible klass if not six PY 3 klass unicode klass str klass str lambda self self unicode encode u'utf- 8 ' return klass",
+    "question": "Where does a decorator define methods ?",
+    "answer": "under python 2",
+    "_category": "Where"
+  },
+  {
+    "code": "def rfind s *args return apply s rfind args",
+    "question": "Where is substring sub found ?",
+    "answer": "in s",
+    "_category": "Where"
+  },
+  {
+    "code": "def do File filename linkrel ext url templ options {} outfile Generator get Output File Name doc parse File And Report filename cloned Node templ clone Node 1 munge doc cloned Node linkrel os path dirname filename filename ext url options outfile Generator new Filename outfile Generator filename ext write Document new Filename cloned Node",
+    "question": "Where do the input document process ?",
+    "answer": "at c{filename }",
+    "_category": "Where"
+  },
+  {
+    "code": "@profiler tracedef subnet create request network id **kwargs LOG debug 'subnet create netid %s kwargs %s' % network id kwargs body {'subnet' {'network id' network id}}if 'tenant id' not in kwargs kwargs['tenant id'] request user project idbody['subnet'] update kwargs subnet neutronclient request create subnet body body get 'subnet' return Subnet subnet",
+    "question": "Where does the code create a subnet ?",
+    "answer": "on a specified network",
+    "_category": "Where"
+  },
+  {
+    "code": "def run shell command command stdin None **kwargs with run interactive shell command command **kwargs as p ret p communicate stdin return ret",
+    "question": "Where does the code run a single command ?",
+    "answer": "in shell",
+    "_category": "Where"
+  },
+  {
+    "code": "def print accounts accounts response print '------ Account Collection-------' print pagination info accounts response print for account in accounts response get 'items' [] print ' Account ID %s' % account get 'id' print ' Kind %s' % account get 'kind' print ' Self Link %s' % account get 'self Link' print ' Account Name %s' % account get 'name' print ' Created %s' % account get 'created' print ' Updated %s' % account get 'updated' child link account get 'child Link' print ' Childlinkhref %s' % child link get 'href' print ' Childlinktype %s' % child link get 'type' print if not accounts response get 'items' print ' Noaccountsfound \\n'",
+    "question": "Where does all the account info print ?",
+    "answer": "in the accounts collection",
+    "_category": "Where"
+  },
+  {
+    "code": "def strip newsgroup quoting text good lines [line for line in text split '\\n' if not QUOTE RE search line ]return '\\n' join good lines",
+    "question": "Where did the code give text ?",
+    "answer": "in \" news \" format",
+    "_category": "Where"
+  },
+  {
+    "code": "def answer entrance exam problem course request problem user None if not user user request usergrade dict {'value' 1 'max value' 1 'user id' user id}field data cache Field Data Cache cache for descriptor descendents course id user course depth 2 module get module user request problem scope ids usage id field data cache xmodulemodule system publish problem 'grade' grade dict",
+    "question": "Where does the code take a required milestone problem ?",
+    "answer": "in a course",
+    "_category": "Where"
+  },
+  {
+    "code": "def service is upstart name return os access '/etc/init/{ 0 } conf' format name os R OK",
+    "question": "Where are from \" writing jobs \" at URL jobs defined ?",
+    "answer": "in files placed in /etc / init",
+    "_category": "Where"
+  },
+  {
+    "code": "def create endpoint 'incidents' api url None page id None api key None api version None **kwargs params get api params api url api url page id page id api key api key api version api version if not validate api params params log error ' Invalid AP Iparams ' log error params return {'result' False 'comment' ' Invalid AP Iparams Seelogfordetails'}endpoint sg endpoint[ -1 ]headers get headers params create url '{base url}/v{version}/pages/{page id}/{endpoint} json' format base url params['api url'] version params['api version'] page id params['api page id'] endpoint endpoint change request {}for karg warg in six iteritems kwargs if warg is None or karg startswith ' ' or karg in INSERT FORBIDDEN FILEDS continuechange request key '{endpoint sg}[{karg}]' format endpoint sg endpoint sg karg karg change request[change request key] wargreturn http request create url method 'POST' headers headers data change request",
+    "question": "Where does the code insert a new entry ?",
+    "answer": "under a specific endpoint",
+    "_category": "Where"
+  },
+  {
+    "code": "def django template include file name mako context dictionary dict mako context return loader render to string file name dictionary dictionary",
+    "question": "Where can this be used to include a django template in the way that a django - style { % include % } does ?",
+    "answer": "within a mako template",
+    "_category": "Where"
+  },
+  {
+    "code": "def check gateway invalid in subnet cidr gateway ip netaddr IP Address gateway net netaddr IP Network cidr return ip in net and ip net network or net version constants IP VERSION 4 and ip net[ -1 ]",
+    "question": "Where is the gw ip address invalid ?",
+    "answer": "on the subnet",
+    "_category": "Where"
+  },
+  {
+    "code": "def expand dims x dim -1 pattern [i for i in range x type ndim ]if dim < 0 if x type ndim 0 dim 0else dim dim % x type ndim + 1 pattern insert dim 'x' return x dimshuffle pattern",
+    "question": "Where does the code add a 1-sized dimension ?",
+    "answer": "at index",
+    "_category": "Where"
+  },
+  {
+    "code": "def chpgrp path group if group is None raise Salt Invocation Error \" Thegroupvaluewasspecifiedas Noneandisinvalid Ifyoumeanthebuilt-in Nonegroup specifythegroupinlowercase e g 'none' \" err ''try group SID domain Name object Type win 32 security Lookup Account Name None group except pywinerror err + ' Groupdoesnotexist\\n'if not os path exists path err + ' Filenotfound\\n'if err return errprivilege enabled Falsetry privilege enabled enable privilege win 32 security SE RESTORE NAME win 32 security Set Named Security Info path win 32 security SE FILE OBJECT win 32 security GROUP SECURITY INFORMATION None group SID None None finally if privilege enabled disable privilege win 32 security SE RESTORE NAME return None",
+    "question": "Where do the group of a file change ?",
+    "answer": "under windows",
+    "_category": "Where"
+  },
+  {
+    "code": "def koans filename KOANS FILENAME names names from file filename return koans suite names",
+    "question": "Where did all the koans list ?",
+    "answer": "in filename",
+    "_category": "Where"
+  },
+  {
+    "code": "def extract thumbnail number text pattr re compile '^\\\\s*#\\\\s*sphinx gallery thumbnail number\\\\s* \\\\s* [0 - 9 ]+ \\\\s*$' flags re MULTILINE match pattr search text if match is None thumbnail number 1else thumbnail number int match groups [0 ] return thumbnail number",
+    "question": "Where did the thumbnail image number specify ?",
+    "answer": "in the docstring",
+    "_category": "Where"
+  },
+  {
+    "code": "def verify dict keys expected keys target dict strict True if not isinstance target dict dict msg \" Invalidinput '% target dict s'mustbeadictionarywithkeys % expected keys s\" % dict target dict target dict expected keys expected keys return msgexpected keys set expected keys provided keys set target dict keys predicate expected keys eq if strict else expected keys issubset if not predicate provided keys msg \" Validationofdictionary'skeysfailed Expectedkeys % expected keys s Providedkeys % provided keys s\" % locals return msg",
+    "question": "Where does keys verify ?",
+    "answer": "in a dictionary",
+    "_category": "Where"
+  },
+  {
+    "code": "def copy index matrix A B index index rows False index cols False is diagonal False inplace False prefix None if prefix is None prefix find best blas type A B [0 ]copy prefix copy index matrix map[prefix]if not inplace B np copy B order 'F' try if not A is f contig raise Value Error except A np asfortranarray A copy A B np asfortranarray index index rows index cols is diagonal return B",
+    "question": "Where do all non - index values be in the upper left corner of the matrix ?",
+    "answer": "a time - varying matrix",
+    "_category": "Where"
+  },
+  {
+    "code": "def test dot 22 scalar cast A T dmatrix for scalar int type in T int dtypes y T scalar dtype scalar int type f theano function [A y] T dot A A * y mode mode blas opt assert dot 22 scalar in [x op for x in f maker fgraph toposort ] A T fmatrix for scalar int type in T int dtypes y T scalar dtype scalar int type f theano function [A y] T dot A A * y mode mode blas opt if scalar int type in ['int 32 ' 'int 64 '] assert dot 22 in [x op for x in f maker fgraph toposort ] else assert dot 22 scalar in [x op for x in f maker fgraph toposort ]",
+    "question": "Where do we cast integers to floats properly ?",
+    "answer": "in dot22_to_dot22scalar",
+    "_category": "Where"
+  },
+  {
+    "code": "def extract subrois timeseries file label file indices img nb load timeseries file data img get data roiimg nb load label file rois roiimg get data prefix split filename timeseries file [1 ]out ts file os path join os getcwd u'%s subcortical ts txt' % prefix with open out ts file u'wt' as fp for fsindex in indices ijk np nonzero rois fsindex ts data[ijk]for i0 row in enumerate ts fp write u'%d %d %d %d ' % fsindex ijk[ 0 ][i 0 ] ijk[ 1 ][i 0 ] ijk[ 2 ][i 0 ] + u' ' join [ u'% 10 f' % val for val in row] + u'\\n' return out ts file",
+    "question": "Where do a 3d file contain rois ?",
+    "answer": "in the same space / size of the 4d file indices",
+    "_category": "Where"
+  },
+  {
+    "code": "def get dev 2 url backend instance None return 'http //%s' % get dev 2 hostname backend instance",
+    "question": "Where does the url of a backend [ instance ] return ?",
+    "answer": "in devappserver2",
+    "_category": "Where"
+  },
+  {
+    "code": "def zero cluster if TRAFFICCTL cmd traffic ctl 'metric' 'clear' '--cluster' else cmd traffic line '-Z' log debug ' Running %s' cmd return subprocess cmd",
+    "question": "Where does the code reset performance statistics to zero ?",
+    "answer": "across the cluster",
+    "_category": "Where"
+  },
+  {
+    "code": "def get subtitle file path lang code None youtube id None srt path os path join settings STATIC ROOT 'srt' if lang code srt path os path join srt path lcode to django dir lang code 'subtitles' if youtube id srt path os path join srt path youtube id + ' vtt' return srt path",
+    "question": "Where must both central and distributed servers make these available ?",
+    "answer": "at a web - accessible location",
+    "_category": "Where"
+  },
+  {
+    "code": "def module not found additional depth 0 tb sys exc info [2 ]if len traceback extract tb tb > 1 + additional depth return Falsereturn True",
+    "question": "Why was importerror raised ?",
+    "answer": "because module does not exist or something inside it raised importerror",
+    "_category": "Why"
+  },
+  {
+    "code": "def pack py Object return bz 2 compress json dumps py Object",
+    "question": "Why do a py object zip using json rather than pickle ?",
+    "answer": "due to c * mailing list suggestions : - json is multi - language friendly",
+    "_category": "Why"
+  },
+  {
+    "code": "def get file info ctx retval []request ctx transport reqheaders request get All Headers content type headers get 'content-type' None if content type is None return retvalimg cgi Field Storage fp request content headers ctx in header doc environ {'REQUEST METHOD' request method 'CONTENT TYPE' content type} try keys img keys except Type Error return retvalfor k in keys field img[k]file type field typefile name field disposition options get 'filename' None if file name is not None retval append File Info k file name file type [mmap field file fileno 0 ] return retval",
+    "question": "Why do this hack need ?",
+    "answer": "because twisted does nt offer a way to get file name from content - disposition header",
+    "_category": "Why"
+  },
+  {
+    "code": "def randintw w size 1 from numpy random import randomp np cumsum w / np sum w rvs p searchsorted random np prod size reshape size return rvs",
+    "question": "Why do integer random variables given probabilties useful generate ?",
+    "answer": "because it can be used as index into any array or sequence type parameters w : 1d array_like sequence of weights",
+    "_category": "Why"
+  },
+  {
+    "code": "def matvec x return np zeros 3",
+    "question": "Why did the code need ?",
+    "answer": "as local functions are not pickleable",
+    "_category": "Why"
+  },
+  {
+    "code": "@register filterdef flagged with obj slug content type Content Type objects get for model obj flags Flag objects filter flag type slug slug content type content type object id obj pk return flags count 0",
+    "question": "Why does true of false return ?",
+    "answer": "based on whether the object is flagged one or more times with a particular flag type",
+    "_category": "Why"
+  },
+  {
+    "code": "def cfg 2 dict cfg d {}for section in cfg sections d[section] dict cfg items section return d",
+    "question": "Why does the code turn a configparser into a nested dict ?",
+    "answer": "because configparser objects are dumb",
+    "_category": "Why"
+  },
+  {
+    "code": "def mvn loglike sum x sigma nobs len x nobs 2 nobs / 2 0 SSR x ** 2 sum llf - np log SSR * nobs 2 llf - 1 + np log np pi / nobs 2 * nobs 2 if np any sigma and sigma ndim 2 llf - 0 5 * np log np linalg det sigma return llf",
+    "question": "Why does this differ from mvn_loglike ?",
+    "answer": "why",
+    "_category": "Why"
+  },
+  {
+    "code": "def retry on port collision reason add cleanup reason trap Address In Use ip port reason value addressused by find process name port ADDRESS IN USE ip ip port port name used by write d cleanup d add Callback lambda ignored add return d",
+    "question": "Why do it fail to start ?",
+    "answer": "because of a port collision",
+    "_category": "Why"
+  },
+  {
+    "code": "def get layer name fns layers[name]return eval fns[ 0 ] eval fns[ 1 ]",
+    "question": "Why is the init very slow ?",
+    "answer": "the reason",
+    "_category": "Why"
+  },
+  {
+    "code": "def find id 3 v 1 fileobj extra read 'APETAGEX' index 'TAG' try fileobj seek -128 - extra read 2 except IO Error as e if e errno errno EINVAL fileobj seek 0 0 else raisedata fileobj read 128 + extra read try idx data index 'TAG' except Value Error return None 0 else try ape idx data index 'APETAGEX' except Value Error passelse if idx ape idx + extra read return None 0 tag Parse ID 3 v 1 data[idx ] if tag is None return None 0 offset idx - len data return tag offset",
+    "question": "Why does a tuple of or offset return ?",
+    "answer": "mainly because we used to write too short tags in some cases and we need the offset to delete them",
+    "_category": "Why"
+  },
+  {
+    "code": "def ignore deprecation warnings target if target class name not in 'instancemethod' 'function' for attr in dir target if not attr startswith 'test' continueattr value getattr target attr if not hasattr attr value ' call ' continuesetattr target attr ignore deprecation warnings attr value return targetelse @wraps target def wrapped *args **kwargs with warnings catch warnings warnings filterwarnings 'ignore' category Deprecation Warning return target *args **kwargs return wrapped",
+    "question": "Why is this useful ?",
+    "answer": "as the test runner can be set to raise an exception on a deprecation warning",
+    "_category": "Why"
+  },
+  {
+    "code": "def file open *args **kwargs return file *args **kwargs",
+    "question": "Why is this kept in a separate module ?",
+    "answer": "the reason",
+    "_category": "Why"
+  },
+  {
+    "code": "def kid rsa public key a b A B M a * b - 1 e A * M + a d B * M + b n e * d - 1 // M return n e",
+    "question": "Why is rsa a version of rsa useful to teach grade school children ?",
+    "answer": "since it does not involve exponentiation",
+    "_category": "Why"
+  },
+  {
+    "code": "def with Class classname namespace '' classattr '%s class' % namespace if namespace else 'class' return with Attribute **{classattr classname}",
+    "question": "Why did difficult make ?",
+    "answer": "because c{class } is a reserved word in python",
+    "_category": "Why"
+  },
+  {
+    "code": "def define nrt unresolved abort ctx module fnty ctx call conv get function type types none fn ir Function module fnty name 'nrt unresolved abort' bb fn append basic block builder ir IR Builder bb msg 'numbajittedfunctionabortedduetounresolvedsymbol'ctx call conv return user exc builder Runtime Error msg return fn",
+    "question": "Why does an abort function define ?",
+    "answer": "due to unresolved symbol",
+    "_category": "Why"
+  },
+  {
+    "code": "def preserve plugin listeners if not Import Added Plugin listeners Import Added Plugin listeners listeners",
+    "question": "Why does the code preserve the initial plugin listeners ?",
+    "answer": "as they would otherwise be deleted after the first setup / tear down cycle",
+    "_category": "Why"
+  },
+  {
+    "code": "def json dict unicode to bytes d encoding 'utf- 8 ' errors 'surrogate or strict' if isinstance d text type return to bytes d encoding encoding errors errors elif isinstance d dict return dict map json dict unicode to bytes iteritems d repeat encoding repeat errors elif isinstance d list return list map json dict unicode to bytes d repeat encoding repeat errors elif isinstance d tuple return tuple map json dict unicode to bytes d repeat encoding repeat errors else return d",
+    "question": "Why do dict keys and values convert to byte str specialized for json return recursively ?",
+    "answer": "because this only handles",
+    "_category": "Why"
+  },
+  {
+    "code": "@task task ignore result True def get and store friends user facebook try logger info 'attemptingtogetandstorefriendsfor%s' user id stored friends facebook get and store friends user logger info 'celeryisstoring%sfriends' len stored friends return stored friendsexcept Integrity Error as e logger warn 'get and store friendsfailedfor%switherror%s' user id e",
+    "question": "Why does this version run also ?",
+    "answer": "since facebook is quite slow",
+    "_category": "Why"
+  },
+  {
+    "code": "def get dut 1 utc time try return time delta ut 1 utcexcept iers IERS Range Error as e warn iers e return np zeros time shape",
+    "question": "Why is this function used to get ut1-utc in coordinates ?",
+    "answer": "because normally it gives an error outside the iers range",
+    "_category": "Why"
+  },
+  {
+    "code": "def release lock pass",
+    "question": "Why does no lock to release be ?",
+    "answer": "since acquiring is a no - op when there is no threading",
+    "_category": "Why"
+  },
+  {
+    "code": "def pack py Object return bz 2 compress json dumps py Object",
+    "question": "Why do a py object serialize using json rather than pickle ?",
+    "answer": "due to c * mailing list suggestions",
+    "_category": "Why"
+  },
+  {
+    "code": "def test read twoline wrong marker table '\\n Col 1 Col 2 \\n aaaaaa aaaaaaaaaa \\n 1 2 \"hello\" \\n 2 4 \\'sworlds \\n'with pytest raises Inconsistent Table Error as excinfo dat ascii read table Reader ascii Fixed Width Two Line delimiter ' ' guess False assert ' Charactersinpositionlinemustbepart' in str excinfo value",
+    "question": "Why be test failure be part an allowed set when position line uses characters prone to ambiguity characters in position line ?",
+    "answer": "because normal letters or numbers will lead to ambiguous tables",
+    "_category": "Why"
+  },
+  {
+    "code": "def test exit on collection with maxfail bigger than n errors testdir testdir makepyfile **COLLECTION ERROR PY FILES res testdir runpytest '--maxfail 4' assert res ret 2 res stdout fnmatch lines ['collected 2 items/ 2 errors' '*ERRO Rcollectingtest 02 import error py*' '* Nomodulenamed*asdfa*' '*ERRO Rcollectingtest 03 import error py*' '* Nomodulenamed*asdfa*']",
+    "question": "Why does the code verify the test run aborts even if maxfail count of errors was not reached ?",
+    "answer": "due to collection errors",
+    "_category": "Why"
+  },
+  {
+    "code": "def external program check to check frozenset [PSQL BIN LZOP BIN PV BIN] could not run []error msgs []def psql err handler popen assert popen returncode 0 error msgs append textwrap fill ' Couldnotgetaconnectiontothedatabase notethatsuperuseraccessisrequired' raise Environment Error 'INTERNAL Hadproblemsrunningpsqlfromexternal program check' with open os devnull 'wb' as nullf for program in to check try if program is PSQL BIN psql csv run 'SELECT 1 ' error handler psql err handler else if program is PV BIN extra args ['--quiet']else extra args []proc popen sp [program] + extra args stdout nullf stderr nullf stdin subprocess PIPE proc stdin close proc wait except Environment Error could not run append program if could not run error msgs append ' Couldnotrunthefollowingprograms aretheyinstalled?' + ' ' join could not run if error msgs raise User Exception 'couldnotrunoneormoreexternalprograms WAL- Edependsupon' '\\n' join error msgs return None",
+    "question": "Why does the code validate the existence and basic working - ness of other programs implemented ?",
+    "answer": "because it is easy to get confusing error output when one does not install a dependency because of the fork - worker model that is both necessary for throughput and makes more obscure the cause of failures",
+    "_category": "Why"
+  },
+  {
+    "code": "@step 'theproblemdisplaynameis\" * \"$' def verify problem display name step name assert equal name world browser find by css ' problem-header' text",
+    "question": "Why is name uppercased ?",
+    "answer": "because the heading styles are uppercase in css",
+    "_category": "Why"
+  },
+  {
+    "code": "def values eq approx high tol a b assert a ndim 4 atol Noneif a shape[ -1 ] * a shape[ -2 ] > 100 atol 3e- 05 return Cuda Ndarray Type values eq approx a b atol atol",
+    "question": "Why do debugmode raise useless error nt have ?",
+    "answer": "due to ronding error",
+    "_category": "Why"
+  },
+  {
+    "code": "def energy corrections perturbation n a 10 mass 0 5 x a var 'x a' Vnm lambda n m a Integral X n n a x * X n m a x * perturbation subs { a a} x 0 a n return E n n a mass evalf Vnm n n a evalf Vnm n n - 1 a ** 2 / E n n a mass - E n n - 1 a mass + Vnm n n + 1 a ** 2 / E n n a mass - E n n + 1 a mass evalf",
+    "question": "Why does the code calculate first two order corrections ?",
+    "answer": "due to perturbation theory and returns",
+    "_category": "Why"
+  },
+  {
+    "code": "def test with mixed stack def a with xxx as abc f def f for z in pass 1 / 0 class xxx object def enter *args passdef exit *args passtry a except assert traceback [ Line 496 + 19 30 'test traceback py' 'test with mixed stack' Line 496 + 6 3 'test traceback py' 'a' Line 496 + 12 3 'test traceback py' 'f' ]",
+    "question": "Why has a stack which is mixed w/ interpreted and non - interpreted frames tests ?",
+    "answer": "because f ( ) has a loop in it",
+    "_category": "Why"
+  },
+  {
+    "code": "def convert nnn nl val word '' mod rem val % 100 val // 100 if rem > 0 word to 19 nl[rem] + ' Honderd' if mod > 0 word + ''if mod > 0 word + convert nn nl mod return word",
+    "question": "Why does the code convert a value < 1000 to dutch special cased ?",
+    "answer": "because it is the level that kicks off the < 100 special case",
+    "_category": "Why"
+  },
+  {
+    "code": "def depth first search set tasks current task visited visited add current task if current task in set tasks['still pending not ext'] upstream failure Falseupstream missing dependency Falseupstream run by other worker Falseupstream scheduling error Falsefor task in current task requires if task not in visited depth first search set tasks task visited if task in set tasks['ever failed'] or task in set tasks['upstream failure'] set tasks['upstream failure'] add current task upstream failure Trueif task in set tasks['still pending ext'] or task in set tasks['upstream missing dependency'] set tasks['upstream missing dependency'] add current task upstream missing dependency Trueif task in set tasks['run by other worker'] or task in set tasks['upstream run by other worker'] set tasks['upstream run by other worker'] add current task upstream run by other worker Trueif task in set tasks['scheduling error'] set tasks['upstream scheduling error'] add current task upstream scheduling error Trueif not upstream failure and not upstream missing dependency and not upstream run by other worker and not upstream scheduling error and current task not in set tasks['run by other worker'] set tasks['not run'] add current task",
+    "question": "Why do tasks be pending still ?",
+    "answer": "why",
+    "_category": "Why"
+  },
+  {
+    "code": "def report return s3 rest controller module 'activity'",
+    "question": "Why is this have needed ?",
+    "answer": "why",
+    "_category": "Why"
+  },
+  {
+    "code": "def request wants json request best request accept mimetypes best match ['application/json' 'text/html'] return best 'application/json' and request accept mimetypes[best] > request accept mimetypes['text/html']",
+    "question": "Why do we accept json only only ?",
+    "answer": "because text / html is preferred to support browsers that accept on * / *",
+    "_category": "Why"
+  },
+  {
+    "code": "def invalid headers reason headers if headers is None return ' Headersdictionarywas None 'if not isinstance headers dict return ' Invalidtypeforheaders Shouldbeadictionary 'for k v in headers iteritems if not isinstance k basestring return ' Headernamesshouldbestrings 'if not isinstance v basestring return ' Headervaluesshouldbestrings 'if not is ascii k return ' Headernameshouldbean ASCI Istring 'if k strip not in HEADER WHITELIST return ' Header\"%s\"isnotallowed ' % k strip",
+    "question": "Why is headers invalid ?",
+    "answer": "why",
+    "_category": "Why"
+  },
+  {
+    "code": "def validate feature module mode 'show' feature module params['feature']feature to be mapped {'show' {'nvoverlay' 'nve' 'vn-segment-vlan-based' 'vnseg vlan' 'hsrp' 'hsrp engine' 'fabricmulticast' 'fabric mcast' 'scp-server' 'scp Server' 'sftp-server' 'sftp Server' 'slaresponder' 'sla responder' 'slasender' 'sla sender' 'ssh' 'ssh Server' 'tacacs+' 'tacacs' 'telnet' 'telnet Server' 'ethernet-link-oam' 'elo' 'port-security' 'eth port sec'} 'config' {'nve' 'nvoverlay' 'vnseg vlan' 'vn-segment-vlan-based' 'hsrp engine' 'hsrp' 'fabric mcast' 'fabricmulticast' 'scp Server' 'scp-server' 'sftp Server' 'sftp-server' 'sla sender' 'slasender' 'sla responder' 'slaresponder' 'ssh Server' 'ssh' 'tacacs' 'tacacs+' 'telnet Server' 'telnet' 'elo' 'ethernet-link-oam' 'eth port sec' 'port-security'}}if feature in feature to be mapped[mode] feature feature to be mapped[mode][feature]return feature",
+    "question": "Why may to be mapped need ?",
+    "answer": "due to inconsistency between how they appear from \" show feature \" output and how they are configured",
+    "_category": "Why"
+  },
+  {
+    "code": "def open file filename filename filename or 'subunit bin' return open filename 'wb'",
+    "question": "Why is this not is a context manager ?",
+    "answer": "because it is used asynchronously by hooks out of the scope of enable ( ) because we want to patch it in our tests",
+    "_category": "Why"
+  },
+  {
+    "code": "def check bcs lengths header mapping data warnings len counts defaultdict int header field to check ' Barcode Sequence'try check ix header index header field to check except Value Error return warningsfor curr data in range len mapping data len counts[len mapping data[curr data][check ix] ] + 1expected bc len max len counts iteritems key itemgetter 1 [0 ]correction ix 1for curr data in range len mapping data if len mapping data[curr data][check ix] expected bc len warnings append ' Barcode%sdiffersthanlength%d DCTB %d %d' % mapping data[curr data][check ix] expected bc len curr data + correction ix check ix return warnings",
+    "question": "Why have the code adds warnings if barcodes have different lengths ?",
+    "answer": "as this is mostly intended to find typos in barcodes",
+    "_category": "Why"
+  },
+  {
+    "code": "@ignore warnings category Deprecation Warning def check positive definite covars covariance type rng np random Random State 1 X rng randn 100 2 X[ -10 ] + 3 3 gmm mixture GMM 2 params 'wc' covariance type covariance type min covar 0 001 gmm fit X if covariance type 'diag' or covariance type 'spherical' assert greater gmm covars min 0 else if covariance type 'tied' covs [gmm covars ]else covs gmm covars for c in covs assert greater np linalg det c 0",
+    "question": "Why do covariance matrices not become non positive definite ?",
+    "answer": "due to the accumulation of round - off errors",
+    "_category": "Why"
+  },
+  {
+    "code": "def auth pipeline urls auth entry redirect url None if not third party auth is enabled return {}return {provider provider id third party auth pipeline get login url provider provider id auth entry redirect url redirect url for provider in third party auth provider Registry displayed for login }",
+    "question": "Why does the code retrieve urls for ?",
+    "answer": "each enabled third - party auth provider",
+    "_category": "Why"
+  },
+  {
+    "code": "def kid rsa public key a b A B M a * b - 1 e A * M + a d B * M + b n e * d - 1 // M return n e",
+    "question": "Why do grade school children teach ?",
+    "answer": "since it does not involve exponentiation",
+    "_category": "Why"
+  },
+  {
+    "code": "def immutable fields error result pipeline definition for e in result pipeline definition['error'] for e2 in e['errors'] if 'cannotbechanged' in e2 return Truereturn False",
+    "question": "Why do update pipeline fail ?",
+    "answer": "due to immutable fields",
+    "_category": "Why"
+  },
+  {
+    "code": "def url fix s charset 'utf- 8 ' if isinstance s unicode s s encode charset 'ignore' scheme netloc path qs anchor urlparse urlsplit s path urllib 2 quote path '/%' qs urllib 2 quote qs ' & ' return urlparse urlunsplit scheme netloc path qs anchor",
+    "question": "Why does spaces function found on internet nt like ?",
+    "answer": "for some reason",
+    "_category": "Why"
+  },
+  {
+    "code": "def mobify image data fmt what None data if fmt 'png' if not isinstance data String IO data String IO data im Image open data data String IO im save data 'GIF' data data getvalue return data",
+    "question": "Why do png images convert to gif ?",
+    "answer": "as the idiotic kindle can not display some png",
+    "_category": "Why"
+  },
+  {
+    "code": "def bytes to str size unit 'YB' units ['B' 'KB' 'MB' 'GB' 'TB' 'PB' 'EB' 'ZB' 'YB']i 0try size changer int size except Value Error error 'bytes to strpasseduncastablenonnumericvalue'raise Value Error error + str size try upto units index unit strip upper except Value Error upto 9while size changer > 1024 and i < upto size changer size changer / 1024 0 i + 1if size changer -1 size changer ' Infinity'i 0try return str '% 2f%s' % size changer units[i] except Type Error return str '%s' % size changer return return str",
+    "question": "Why does the code use the bi convention : 1024 b = 1 kb ?",
+    "answer": "since this method primarily has inputs of bytes for ram @type size : int",
+    "_category": "Why"
+  },
+  {
+    "code": "@app route '/cache' methods 'GET' def cache is conditional request headers get ' If- Modified- Since' or request headers get ' If- None- Match' if is conditional is None response view get response headers[' Last- Modified'] http date response headers['E Tag'] uuid uuid 4 hexreturn responseelse return status code 304",
+    "question": "Why does an modify ?",
+    "answer": "since header or if - none - match",
+    "_category": "Why"
+  },
+  {
+    "code": "def is json content try json loads content is json Trueexcept is json Falsereturn is json",
+    "question": "Why do facebook return 500s which mean they are down or 500s with a nice error message unfortunately ?",
+    "answer": "because you use open graph wrong so we have to figure out which is which :)",
+    "_category": "Why"
+  },
+  {
+    "code": "def url fix s charset 'utf- 8 ' if isinstance s unicode s s encode charset 'replace' scheme netloc path qs anchor safe urlsplit s path quote path '/%' qs quote plus qs ' &% ' return urlparse urlunsplit scheme netloc path qs anchor",
+    "question": "Why is a user nt is a real url just ?",
+    "answer": "because it contains unsafe characters like and so on",
+    "_category": "Why"
+  },
+  {
+    "code": "def test bad stuff import sys Assert sys winver 'HIJACKED' import re Assert re compile 'HIJACKED' try import foo CORRUP Traise Exception ' Corrupted DL Lwasloaded' except Import Error as e passimport foo DLLEXE Are Equal foo DLLEXE Foo BAR 1 try import foo EXEONL Yraise Exception \"* exe'sshouldnotbeautoloaded \" except Import Error as e passexcept System Error as e print ' Work Item# 189503 'try import foo TXTDL Lraise Exception \"* txt'sshouldnotbeautoloaded \" except Import Error as e pass",
+    "question": "Why should ip not load an assembly where ?",
+    "answer": "for one reason or another",
+    "_category": "Why"
+  },
+  {
+    "code": "def init pool worker signal signal signal SIGINT signal SIG IGN",
+    "question": "Why do every worker ignore keyboarinterrups ?",
+    "answer": "since it will be handled by the parent process",
+    "_category": "Why"
+  },
+  {
+    "code": "def RATINGS BY NAME all ratings ALL RATINGS ratings choices []for rb in RATINGS BODIES values for r in rb ratings ratings choices append all ratings index r u'%s-%s' % rb name dehydrate rating r name return ratings choices",
+    "question": "Why does the code create a list of tuples after we know the locale ?",
+    "answer": "since this attempts to concatenate two lazy translations in constants file",
+    "_category": "Why"
+  },
+  {
+    "code": "def reinit Logging Dir if g Logging Initialized and 'NTA LOG DIR' in os environ make Directory From Absolute Path os path dirname gen Logging File Path",
+    "question": "Why do this function call directly ?",
+    "answer": "since initlogging takes care of it for you",
+    "_category": "Why"
+  },
+  {
+    "code": "def forgot username request username form Forgot Username Form message ''site Site objects get current email subject ' Yourusernamefor' + site name if request method 'POST' username form Forgot Username Form request POST if username form is valid users get user model objects filter email username form cleaned data['email'] if users username users[ 0 ] usernameemail message email subject + ' ' + username send email email subject email message settings DEFAULT FROM EMAIL [username form cleaned data['email']] fail silently False message ' Yourusernamehasbeenemailedtoyou ' else message ' Nousercouldbefoundwiththatemailaddress ' return render to response 'people/forgot username form html' Request Context request {'message' message 'form' username form}",
+    "question": "Why does the code look a username ?",
+    "answer": "based",
+    "_category": "Why"
+  },
+  {
+    "code": "def auto reconnect cursor func @wraps func def inner self *args **kwargs try return func self *args **kwargs except Exception as e if not can reconnect e raiseself db close reconnect True self cursor self db cursor return func self *args **kwargs return inner",
+    "question": "Why do the bouncer disconnect the client during a cursor execution ?",
+    "answer": "due to a timeout / etc",
+    "_category": "Why"
+  },
+  {
+    "code": "def memoized with request request func request index 0 def wrapper func memoized func memoized func @functools wraps func def wrapped *args **kwargs args list args request args pop request index args insert request index request func request return memoized func *args **kwargs return wrappedreturn wrapper",
+    "question": "Why are memoized functions with a request argument memoized only during the rendering of a single view ?",
+    "answer": "because the request argument is a new request instance on each view",
+    "_category": "Why"
+  },
+  {
+    "code": "def depth first search set tasks current task visited visited add current task if current task in set tasks['still pending not ext'] upstream failure Falseupstream missing dependency Falseupstream run by other worker Falseupstream scheduling error Falsefor task in current task requires if task not in visited depth first search set tasks task visited if task in set tasks['ever failed'] or task in set tasks['upstream failure'] set tasks['upstream failure'] add current task upstream failure Trueif task in set tasks['still pending ext'] or task in set tasks['upstream missing dependency'] set tasks['upstream missing dependency'] add current task upstream missing dependency Trueif task in set tasks['run by other worker'] or task in set tasks['upstream run by other worker'] set tasks['upstream run by other worker'] add current task upstream run by other worker Trueif task in set tasks['scheduling error'] set tasks['upstream scheduling error'] add current task upstream scheduling error Trueif not upstream failure and not upstream missing dependency and not upstream run by other worker and not upstream scheduling error and current task not in set tasks['run by other worker'] set tasks['not run'] add current task",
+    "question": "Why are tasks pending still ?",
+    "answer": "why",
+    "_category": "Why"
+  },
+  {
+    "code": "def auto reconnect connection func @wraps func def inner self *args **kwargs try return func self *args **kwargs except Exception as e if not can reconnect e raiseself close reconnect True return func self *args **kwargs return inner",
+    "question": "Why do the bouncer disconnect the client ?",
+    "answer": "due to a timeout / etc",
+    "_category": "Why"
+  },
+  {
+    "code": "def generate tracking message id res id try rnd random System Random random except Not Implemented Error rnd random random rndstr '% 15 f' % rnd [2 ]return '<% 15 f %s-openerp-%s@%s>' % time time rndstr res id socket gethostname",
+    "question": "Why can a string be used in the message - id rfc822 header field used to track the replies related to a given object ?",
+    "answer": "thanks to the \" in - reply - to \" or \" references \" fields that mail user agents will set",
+    "_category": "Why"
+  },
+  {
+    "code": "def validate feature module mode 'show' feature module params['feature']feature to be mapped {'show' {'nvoverlay' 'nve' 'vn-segment-vlan-based' 'vnseg vlan' 'hsrp' 'hsrp engine' 'fabricmulticast' 'fabric mcast' 'scp-server' 'scp Server' 'sftp-server' 'sftp Server' 'slaresponder' 'sla responder' 'slasender' 'sla sender' 'ssh' 'ssh Server' 'tacacs+' 'tacacs' 'telnet' 'telnet Server' 'ethernet-link-oam' 'elo' 'port-security' 'eth port sec'} 'config' {'nve' 'nvoverlay' 'vnseg vlan' 'vn-segment-vlan-based' 'hsrp engine' 'hsrp' 'fabric mcast' 'fabricmulticast' 'scp Server' 'scp-server' 'sftp Server' 'sftp-server' 'sla sender' 'slasender' 'sla responder' 'slaresponder' 'ssh Server' 'ssh' 'tacacs' 'tacacs+' 'telnet Server' 'telnet' 'elo' 'ethernet-link-oam' 'eth port sec' 'port-security'}}if feature in feature to be mapped[mode] feature feature to be mapped[mode][feature]return feature",
+    "question": "Why be some features mapped ?",
+    "answer": "due to inconsistency between how they appear from \" show feature \" output and how they are configured",
+    "_category": "Why"
+  },
+  {
+    "code": "def get mock request student request Request Factory get '/' request user studentreturn request",
+    "question": "Why does the code make a fake request ?",
+    "answer": "because grading code expects to be able to look at the request",
+    "_category": "Why"
+  },
+  {
+    "code": "def diagnose try from gi repository import Notifyexcept Import Error return u'<p> Error gir-notifyisn\\'tinstalled On Ubuntu/ Debian installthe<ahref \"apt gir 1 2-notify- 0 7\">gir 1 2-notify- 0 7</a>or<ahref \"apt gir 1 0-notify- 0 4\">gir 1 0-notify- 0 4</a>package 'if u'DISPLAY' not in os environ and u'DBUS SESSION BUS ADDRESS' not in os environ return u\"<p> Error Environmentvariables DISPLA Yand DBUS SESSION BUS ADDRES Saren'tset libnotifywillonlyworkwhenyourun Si CKRAG Efromadesktoplogin \"try import dbusexcept Import Error passelse try bus dbus Session Bus except dbus D Bus Exception as e return u'<p> Error unabletoconnectto D- Bussessionbus <code>%s</code> <p> Areyourunning Si CKRAG Einadesktopsession?' % cgi escape e try bus get object u'org freedesktop Notifications' u'/org/freedesktop/ Notifications' except dbus D Bus Exception as e return u\"<p> Error theredoesn'tseemtobeanotificationdaemonavailable <code>%s</code><p> Tryinstallingnotification-daemonornotify-osd \" % cgi escape e return u'<p> Error Unabletosendnotification '",
+    "question": "Why is libnotify nt working ?",
+    "answer": "for reasons",
+    "_category": "Why"
+  },
+  {
+    "code": "def split command line command line arg list []arg ''state basic 0state esc 1state singlequote 2state doublequote 3state whitespace 4state state basicfor c in command line if state state basic or state state whitespace if c '\\\\' state state escelif c \"'\" state state singlequoteelif c '\"' state state doublequoteelif c isspace if state state whitespace Noneelse arg list append arg arg ''state state whitespaceelse arg arg + c state state basicelif state state esc arg arg + c state state basicelif state state singlequote if c \"'\" state state basicelse arg arg + c elif state state doublequote if c '\"' state state basicelse arg arg + c if arg '' arg list append arg return arg list",
+    "question": "Does this split a command line into a list of arguments ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "@task task ignore result True def get and store friends user facebook try logger info 'attemptingtogetandstorefriendsfor%s' user id stored friends facebook get and store friends user logger info 'celeryisstoring%sfriends' len stored friends return stored friendsexcept Integrity Error as e logger warn 'get and store friendsfailedfor%switherror%s' user id e",
+    "question": "Will this version cause any errors ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def setup platform hass config add devices discovery info None file path config[CONF FILE PATH]if not os access file path os R OK LOGGER error 'filepathisnotreadable' return Falseadd devices [ Local File config[CONF NAME] file path ]",
+    "question": "Does the code setup the camera ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def fanout cast conf context topic msg connection pool LOG debug ' Makingasynchronousfanoutcast ' add unique id msg pack context msg context with Connection Context conf connection pool as conn conn fanout send topic rpc common serialize msg msg",
+    "question": "Does the code send a message on a fanout exchange without waiting for a response ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def get dhcp opts context network ref fixedips gateway network ref['gateway']if network ref['multi host'] and not network ref['share address'] or CONF share dhcp address gateway network ref['dhcp server']hosts []if CONF use single default gateway for fixedip in fixedips if fixedip allocated vif id fixedip virtual interface idif fixedip default route hosts append host dhcp opts vif id gateway else hosts append host dhcp opts vif id else hosts append host dhcp opts None gateway return '\\n' join hosts",
+    "question": "Does the code get networks hosts config in dhcp - opts format ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def expr from dict rep *gens result []for monom coeff in rep items term [coeff]for g m in zip gens monom if m term append Pow g m result append Mul *term return Add *result",
+    "question": "Does the code convert a multinomial form into an expression ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def reverse x axes if isinstance axes int axes [axes]slices [ slice None None -1 if i in axes else slice None None None for i in range x ndim ]return x[slices]",
+    "question": "Does the code reverse a tensor along the the specified axes ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def paths from event self event md event mime Data if md has Format u'text/uri-list' and not md has Format u'application/calibre+from library' urls [unicode u to Local File for u in md urls ]return [u for u in urls if os path splitext u [1 ] and os path exists u ]",
+    "question": "Did paths represent files with extensions ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def filter unstarted categories category map course now datetime now UTC result map {}unfiltered queue [category map]filtered queue [result map]while unfiltered queue unfiltered map unfiltered queue pop filtered map filtered queue pop filtered map['children'] []filtered map['entries'] {}filtered map['subcategories'] {}for child c type in unfiltered map['children'] if child in unfiltered map['entries'] and c type TYPE ENTRY if course self paced or unfiltered map['entries'][child]['start date'] < now filtered map['children'] append child c type filtered map['entries'][child] {}for key in unfiltered map['entries'][child] if key 'start date' filtered map['entries'][child][key] unfiltered map['entries'][child][key]else log debug u' Filteringout %swithstart date %s' child unfiltered map['entries'][child]['start date'] elif course self paced or unfiltered map['subcategories'][child]['start date'] < now filtered map['children'] append child c type filtered map['subcategories'][child] {}unfiltered queue append unfiltered map['subcategories'][child] filtered queue append filtered map['subcategories'][child] return result map",
+    "question": "Have a subset of categories from the provided map met the start date yet ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def reparam string dictionary dictionary dictionary copy dictionary[' builtins '] object vals []result []for live chunk in interpolate string if live v eval chunk dictionary result append sqlquote v else result append chunk return SQL Query join result ''",
+    "question": "Does the code use values from the dictionary ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def write Output file Name should Analyze True skeinforge craft write Chain Text With Noun Message file Name 'dwindle' should Analyze",
+    "question": "Does the code dwindle a gcode linear move file ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def get Character Integer String character offset split Line step Length float Value get Float From Character Split Line character split Line if float Value None return Nonefloat Value + offsetinteger Value int round float float Value / step Length return character + str integer Value",
+    "question": "Does the code get a character and integer string ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def no testtools skip decorator logical line if TESTTOOLS SKIP DECORATOR match logical line yield 0 'T 109 Cannotusetesttools skipdecorator insteadusedecorators skip becausefromtempest lib'",
+    "question": "Do that methods have the testtools ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def auth request if hasattr request 'user' user request userelse from django contrib auth models import Anonymous Useruser Anonymous User return {'user' user 'perms' Perm Wrapper user }",
+    "question": "Do apps use djangos authentication system ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def check abstract methods base subclass for attrname in dir base if attrname startswith ' ' continueattr getattr base attrname if is abstract method attr oattr getattr subclass attrname if is abstract method oattr raise Exception '%s %snotoverridden' % subclass name attrname",
+    "question": "Does subclass override a method on base that is marked as an abstract method ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def alpha shard word if word[ 0 ] in 'abcdef' return 'server 0 'elif word[ 0 ] in 'ghijklm' return 'server 1 'elif word[ 0 ] in 'nopqrs' return 'server 2 'else return 'server 3 '",
+    "question": "Does the code do a poor job of assigning data to servers by using first letters ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def make image dict image def fetch attrs d attrs return dict [ a d[a] for a in attrs if a in d keys ] properties dict p['name'] p['value'] for p in image['properties'] if not p['deleted'] image dict fetch attrs image glance db IMAGE ATTRS image dict['properties'] properties limit locations image dict return image dict",
+    "question": "Can we use to serialize the image an image ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def is Tipc Available if not hasattr socket 'AF TIPC' return Falseif not os path isfile '/proc/modules' return Falsewith open '/proc/modules' as f for line in f if line startswith 'tipc' return Trueif test support verbose print \"TIP Cmoduleisnotloaded please'sudomodprobetipc'\"return False",
+    "question": "Is the tipc module loaded on ubuntu and probably other linux distros if the tipc module is loaded automatically ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def load file filename fp open filename 'rb' source fp read + '\\n' try co compile source filename 'exec' except Syntax Error print >>sys stderr '>> Syntaxerrorin' filenameraisefp close return co",
+    "question": "Does this function write any file ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def sequence case data left right return merged clips data seq data['bases']if left > right new seq seq lower else new seq '' join seq[ left - 1 ] lower seq[ left - 1 right] seq[right ] lower return new seq",
+    "question": "Did it return the seq with mixed case ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def is library missing name path module name rsplit ' ' 1 try package import module path return not module has submodule package module except Import Error return is library missing path",
+    "question": "Do library that failed to load fail to import ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def dot m1 m2 mult 1 0 target None if not target m eigenmat get leading dimension m1 p mat n eigenmat get nonleading dimension m2 p mat target empty m n err code eigenmat dot m1 p mat m2 p mat target p mat ct c float 0 0 ct c float mult if err code raise generate exception err code return target",
+    "question": "Does the code find the dot product between m1 and m2 ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def require api access view func @wraps view func def wrapped view view obj *args **kwargs ' Wrapperfortheviewfunction 'if Api Access Request has api access args[ 0 ] user return view func view obj *args **kwargs return redirect reverse 'api admin api-request' return wrapped view",
+    "question": "Does the requesting user have api access ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def dmp gcdex f g u K if not u return dup gcdex f g K else raise Multivariate Polynomial Error f g",
+    "question": "Did the code extend euclidean algorithm in f[x ] ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def get Evaluated Value default Value element Node key if element Node None return default Valueif key in element Node attributes return get Evaluated Value Obliviously element Node key return default Value",
+    "question": "Does the code get the evaluated value ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def hash file file like object checksum hashlib sha 1 for chunk in iter lambda file like object read 32768 '' checksum update chunk return checksum hexdigest",
+    "question": "Does the code generate a hash for the contents of a file ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "@ assure identitydef authenticate connect True identity authenticate",
+    "question": "Will you need to call this directly generally ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def wrap generator with readonly generator def wrapper generator *args **kwargs generator obj generator *args **kwargs readonly connection connection set django connection try first value generator obj next finally readonly connection connection unset django connection yield first value while True yield generator obj next wrapper generator name generator name return wrapper generator",
+    "question": "Do we wrap generators specially ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def avail images conn None call None if call 'action' raise Salt Cloud System Exit ' Theavail imagesfunctionmustbecalledwith-for--function orwiththe--list-imagesoption' if not conn conn get conn images conn list images ret {}for img in images if isinstance img name string types and not six PY 3 img name img name encode 'ascii' 'salt-cloud-force-ascii' else img name str img name ret[img name] {}for attr in dir img if attr startswith ' ' continueattr value getattr img attr if isinstance attr value string types and not six PY 3 attr value attr value encode 'ascii' 'salt-cloud-force-ascii' ret[img name][attr] attr valuereturn ret",
+    "question": "Does the code return a dict of all available vm images on the cloud provider with relevant data ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def ffmpeg write image filename image logfile False if image dtype 'uint 8 ' image image astype 'uint 8 ' cmd [get setting 'FFMPEG BINARY' '-y' '-s' '%dx%d' % image shape[ 2][ -1 ] '-f' 'rawvideo' '-pix fmt' 'rgba' if image shape[ 2 ] 4 else 'rgb 24 ' '-i' '-' filename]if logfile log file open filename + ' log' 'w+' else log file sp PIP Epopen params {'stdout' DEVNULL 'stderr' log file 'stdin' sp PIPE}if os name 'nt' popen params['creationflags'] 134217728 proc sp Popen cmd **popen params out err proc communicate image tostring if proc returncode err '\\n' join [ '[ Movie Py] Running %s\\n' % cmd 'WARNING thiscommandreturnedanerror ' err decode 'utf 8 ' ] raise IO Error err del proc",
+    "question": "Does the code write an image to a file ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def display filename '' if filename '' display Files get G Code Files Which Are Not Log Files returndisplay File filename",
+    "question": "Does the code display the commands ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def stub islink path return False",
+    "question": "Does the operating system support symlinks ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def ones shape dtype numpy float 32 stream None warnings warn 'chainer cuda onesisdeprecated Usecupy onesinstead ' Deprecation Warning check cuda available assert stream is None return cupy ones shape dtype dtype",
+    "question": "Does the code create a zero - filled : class : cupy ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def test truncate purified field xss s 'safe<script>alert \"omg\" </script>'t Purified Translation localized string s env jingo get env actual env from string '{{s truncate 100 }}' render {'s' t} assert actual 'safe&lt script&gt alert \"omg\" &lt /script&gt ' actual env from string '{{s truncate 5 }}' render {'s' t} assert actual 'safe '",
+    "question": "Should the code truncating introduce xss issues ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "@cache permissiondef can add comment user project return check permission user project 'trans add comment'",
+    "question": "Can user add comment for given project ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def julian 2 num j if cbook iterable j j np asarray j return j - JULIAN OFFSET",
+    "question": "Does the code convert a julian date to a matplotlib date ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def xml File path mode 'r' fh file path mode while fh read 1 '<' passfh seek -1 1 return fh",
+    "question": "Can lxml parse xml files starting with a bom in case such xml file is used ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def guess content type filename default 'application/octet-stream' if filename return mimetypes guess type filename [0 ] or default return default",
+    "question": "Does the code guess the \" content - type \" of a file ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def quote s if not isinstance s str return sres list s for i in range len res c res[i]if c in ' / #? @& +$ \"[]<>%\\n\\\\' res[i] ' %02 X' % ord c return '' join res",
+    "question": "Do primary key values confuse the admin urls by escaping any / ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def Require Test Image f @functools wraps f def Decorator testinstance image path os path join testinstance base path 'win 7 trial 64 bit raw' if os access image path os R OK return f testinstance else return testinstance skip Test ' Nowin 7 trial 64 bit rawmemoryimage skippingtest Downloadithere goo gl/ 19 AJ Glandputitintest data ' return Decorator",
+    "question": "Do we have the memory image ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "@conf commands registerdef wrpcap filename pkt *args **kargs Pcap Writer filename *args **kargs write pkt",
+    "question": "Does the code write a list of packets to a pcap file ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def check mount path if sabnzbd DARWIN m re search '^ / Volumes/[^/]+ /' path re I elif sabnzbd WIN 32 m re search '^ [a-z] \\\\\\\\ ' path re I else m re search '^ / ? mnt media /[^/]+ /' path if m for n in xrange cfg wait ext drive or 1 if os path exists m group 1 return Truelogging debug ' Waitingfor%stocomeonline' m group 1 time sleep 1 return not m",
+    "question": "Is volume mounted on linux 6 times 6 times ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def new key *args **kwargs return DES Cipher key *args **kwargs",
+    "question": "Does the code create a new des cipher ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def get tag uri url date url split urlparse urlparse url hostname getattr url split 'hostname' url split[ 1 ] split ' ' [0 ] path url split[ 2 ]fragment url split[ 5 ]d ''if date is not None d ' %s' % datetime safe new datetime date strftime '%Y-%m-%d' return u'tag %s%s %s/%s' % hostname d path fragment",
+    "question": "Does the code create a taguri ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def render template multiple times request return Http Response render to string 'base html' + render to string 'base html'",
+    "question": "Does a view render a template multiple times ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def assert no overwrite call shapes dtypes None if dtypes is None dtypes [np float 32 np float 64 np complex 64 np complex 128 ]for dtype in dtypes for order in ['C' 'F'] for faker in [ id Fake Matrix Fake Matrix 2 ] orig inputs [ get array s dtype for s in shapes]inputs [faker x copy order for x in orig inputs]call *inputs msg 'callmodifiedinputs[%r %r]' % dtype faker for a b in zip inputs orig inputs np testing assert equal a b err msg msg",
+    "question": "Does a call overwrite its input arguments ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def get Geometry Output By Arguments arguments element Node evaluate set Attributes By Arguments ['radius' 'end Z' 'start'] arguments element Node return get Geometry Output None element Node",
+    "question": "Does the code get vector3 vertexes from attribute dictionary by arguments ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def test scenario with hash within double quotes scenario Scenario from string INLINE COMMENTS IGNORED WITHIN DOUBLE QUOTES step 1 step 2 scenario stepsexpect step 1 sentence to equal u' Given Iamloggedinontwitter' expect step 2 sentence to equal u' When Isearchforthehashtag\"#hammer\"'",
+    "question": "Do scenarios consider them as comments ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def test write normal out String IO ascii write dat out Writer ascii RST assert equal splitlines out getvalue ' \\n Col 1 Col 2 Col 3 Col 4 \\n \\n 1 2\"hello\" 1 a\\n 2 4\\'sworlds 22 \\n \\n'",
+    "question": "Does the code write a table ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "@frappe whitelist def toggle like doctype name add False toggle like doctype name add",
+    "question": "Does the code remove the current user in the _ _ liked_by property of the given document ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "@register filterdef shuffle sequence random shuffle sequence return sequence",
+    "question": "Does the code shuffle a sequence ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "@pytest mark parametrize u'model' [ Shift 0 + Shift 0 Shift 0 Shift 0 - Shift 0 Shift 0 Shift 0 * Shift 0 Shift 0 Shift 0 / Shift 0 Shift 0 Shift 0 ** Shift 0 Shift 0 Gaussian 1 D 1 2 3 Gaussian 1 D 4 5 6 ] def test compound unsupported inverse model with pytest raises Not Implemented Error model inverse",
+    "question": "Are inverses supported in cases where it should nt be ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def check test runner from django conf import settingsnew default u'django test runner Discover Runner'test runner setting getattr settings u'TEST RUNNER' new default if test runner setting new default message [ u\" Django 1 6introducedanewdefaulttestrunner '%s' \" % new default u' Youshouldensureyourtestsareallrunning&behavingasexpected See' u'https //docs djangoproject com/en/dev/releases/ 1 6/#new-test-runner' u'formoreinformation ']return u'' join message",
+    "question": "Has the user overridden the test_runner setting ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def get Split Line Before Bracket Semicolon line bracket Semicolon Index min line find ' ' line find ' ' if bracket Semicolon Index < 0 return line split return line[ bracket Semicolon Index] split",
+    "question": "Does the code get the split line before a bracket or semicolon ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def parse relative url relative url if not relative url raise Relative Url Error ' Relative UR Lisempty' scheme netloc path query fragment urlparse urlsplit relative url if scheme or netloc raise Relative Url Error ' Relative UR Lmaynothaveaschemeorlocation' if fragment raise Relative Url Error ' Relative UR Lmaynotspecifyafragment' if not path or path[ 0 ] '/' raise Relative Url Error ' Relative UR Lpathmuststartwith\"/\"' return path query",
+    "question": "Does it split into its path and query string ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def whitespace around comma logical line line logical linefor m in WHITESPACE AFTER COMMA REGEX finditer line found m start + 1 if ' DCTB ' in m group yield found \"E 242 tabafter'%s'\" % m group [0 ] else yield found \"E 241 multiplespacesafter'%s'\" % m group [0 ]",
+    "question": "Do extraneous whitespace avoid in the following situations : - more than one space around an assignment operator to align it with another ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def commit connection commit set clean",
+    "question": "Does the code reset the dirty flag ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def add test cls test name func *args **kwargs setattr cls test name feed data func test name *args **kwargs",
+    "question": "Does the code add a test case to this class ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "@evalcontextfilterdef do xmlattr eval ctx d autospace True rv u'' join u'%s \"%s\"' % escape key escape value for key value in d iteritems if value is not None and not isinstance value Undefined if autospace and rv rv u'' + rv if eval ctx autoescape rv Markup rv return rv",
+    "question": "Does the code create an sgml / xml attribute string based on the items in a dict ?",
+    "answer": "Yes",
+    "_category": "Yes/No"
+  },
+  {
+    "code": "def test builtin mro Are Equal int mro int object",
+    "question": "Should mro include valuetype ?",
+    "answer": "No",
+    "_category": "Yes/No"
+  }
+]

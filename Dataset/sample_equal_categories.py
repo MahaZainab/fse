@@ -33,7 +33,7 @@ CS1QA_CATEGORIES = list(dict.fromkeys(CS1QA_TYPE_MAP.values()))
 
 def classify_codeqa(question: str) -> Optional[str]:
     q = question.strip().lower()
-    q = q.lstrip("""\"''\u201c\u201d\u2018\u2019 ''()[]{}\t\n\r")
+    q = q.lstrip('\"\'\u201c\u201d\u2018\u2019()[]{} \t\n\r')
     if q.startswith("for what purpose"):
         return "For what purpose"
     if q.startswith("what"):
